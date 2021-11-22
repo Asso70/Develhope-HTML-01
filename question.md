@@ -1,1 +1,1 @@
-Esercizio 4: Correggi lo snippet usando i rispettivi tag dove occorre.
+Correggi lo snippet usando i rispettivi tag dove occorre.
