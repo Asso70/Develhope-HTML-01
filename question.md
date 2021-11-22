@@ -8,4 +8,4 @@ Crea una pagina con un articolo per un blog.
 Usa quanto più possibile i tag semantici.
 
 Esercizio 2:
-Aggiungi all'`head` della pagina i tag per titolo, descrizione, autore, favicon e rispettive proprietà del protocollo Open Graph.
+Aggiungi all'<head> della pagina i tag per titolo, descrizione, autore, favicon e rispettive proprietà del protocollo Open Graph.
