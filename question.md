@@ -12,3 +12,5 @@ Esercizio 3: Creare una tabella composta da 3 colonne rappresentanti le entrate 
  - La terza colonna le uscite
  - La prima riga dovrà avere l'header della tabella
  - L'ultima riga deve contenere le somme dei valori
+ ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Esercizio 4: Correggi lo snippet usando i rispettivi tag dove occorre.
