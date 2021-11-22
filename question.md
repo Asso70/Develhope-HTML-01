@@ -1,1 +1,1 @@
-Esercizio 2: Aggiungi all'head della pagina i tag per titolo, descrizione, autore, favicon e rispettive proprietà del protocollo Open Graph.
+Esercizio 3: Creare una tabella composta da 3 colonne rappresentanti le entrate e uscite mensili di un utente, e un titolo
