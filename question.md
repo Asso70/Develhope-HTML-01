@@ -1,1 +1,1 @@
-Esercizio 3: Creare una tabella composta da 3 colonne rappresentanti le entrate e uscite mensili di un utente, e un titolo
+Esercizio 4: Correggi lo snippet usando i rispettivi tag dove occorre.
