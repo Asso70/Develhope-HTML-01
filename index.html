@@ -6,9 +6,16 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<title>Lezione HTML</title>
 		<style>img{max-width:300px;}</style>
+		<link rel="shortcut icon" href="images/Develhope.ico" type="image/x-icon">
 	</head>
 	<body>
-		<img src="assets/img1.webp" alt="Immagine 1"/>
-		<img src="assets/img2.webp" alt="Immagine 2"/>
+		<picture>
+			<source srcset="images/business-man.webp" media="(min-width: 800px">
+			<img src="images/business-man.jpg" alt="Business man">
+		</picture>
+		<picture>
+			<source srcset="images/ok-hand.webp" media="(max-width: 200px">
+			<img src="images/ok-hand.jpg" alt="OK hand">
+		</picture>
 	</body>
 </html>
