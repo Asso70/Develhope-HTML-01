@@ -1,5 +1,5 @@
 # Develhope-HTML-01
-Develhope HTML Class Exercise 1
+Develhope HTML Class
 - 👋 Hi, I’m @Asso70
 - 👀 I’m interested in learning
 - 🌱 I’m currently learning web programming
