@@ -1,109 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-        <title>Lezione HTML</title>
-        <!-- OK, buono a sapersi ma meglio in linea ;-)
-        <style>
-            label {
-                display: block
-            }
-        </style>
-        Anzi...-->
-        <style>
-            label.indirizzo {
-                display: block
-            }
-        </style>
-        <link rel="shortcut icon" href="images/Develhope.ico" type="image/x-icon">
-    </head>
-    <body>
-        <form action="https://subscription.sportsmagazine.com" method="post">
-            <header>
-                <h1>Abbonamento</h1>
-            </header>
-            <main>
-                <div>
-                    <label for="email">E-Mail <abbr title="Richiesto">*</abbr></label>
-                    <input type="email" name="email" id="email" required autofocus>
-                </div>
-                <div>
-                    <label for="password">Password <abbr title="Richiesto">*</abbr></label>
-                    <input type="password" name="password" id="password" required>
-                </div>
-                <div>
-                    <label for="nome">Nome <abbr title="Richiesto">*</abbr></label>
-                    <input type="text" name="nome" id="nome" required>
-                    <label for="cognome">Cognome <abbr title="Richiesto">*</abbr></label>
-                    <input type="text" name="cognome" id="cognome" required>
-                </div>
-                <div>
-                    <label for="dataNascita">Data di nascita</label>
-                    <input type="date" name="dataNascita" id="dataNascita">
-                </div>
-                <div>
-                    <label for="telefono">Telefono</label>
-                    <input type="tel" name="telefono" id="telefono">
-                </div>
-                <div>
-                <label for="offerta">Offerta</label>
-                    <select name="offerta" id="offerta">
-                        <option value="free">Free</option>
-                        <option value="19-99">€19,99</option>
-                        <option value="29-99">€29,99</option>
-                        <option value="39-99">€39,99</option>
-                    </select>
-                </div>
-                <div>
-                    <input type="checkbox" name="privilegio" id="privilegio">
-                    <label for="privilegio">Vantaggi PRO</label>
-                </div>
-                <fieldset>
-                    <legend>Carta di credito</legend>
-                    <div>
-                        <label for="numCarta">Numero <abbr title="Richiesto">*</abbr></label>
-                        <input type="number" name="numCarta" id="numCarta" min="0" step="1" minlength="16" maxlength="16" required>
-                    </div>
-                    <div>
-                        <label for="cvc">CVC <abbr title="Richiesto">*</abbr></label>
-                        <input type="number" name="cvc" id="cvc" min="0" step="1" minlength="3" maxlength="3" required>
-                    </div>
-                    <div>
-                        <label for="fineValidità">Fine validità (mese/anno) <abbr title="Richiesto">*</abbr></label>
-                        <input type="month" name="fineValidità" id="fineValidità" required>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>Indirizzo di fatturazione</legend>
-                    <label for="tipoVia" class="indirizzo">Qualificatore (Via, Corso, Piazza etc...)</label>
-                    <input list="tipoViaL" name="tipoVia" id="tipoVia" required>
-                    <datalist id="tipoViaL">
-                        <option value="Via"></option>
-                        <option value="Piazza"></option>
-                        <option value="Viale"></option>
-                        <option value="Corso"></option>
-                        <option value="Piazzale"></option>
-                        <option value="Largo"></option>
-                        <option value="Circonvallazione"></option>
-                        <option value="Vicolo"></option>
-                        <option value="Vico"></option>
-                        <option value="Lungo"></option>
-                    </datalist>
-                    <label for="nomeVia" class="indirizzo">Nome via  <abbr title="Richiesto">*</abbr></label>
-                    <input type="text" name="nomeVia" id="nomeVia" size="40" required>
-                    <label for="numCivico" class="indirizzo">Num. civico</label>
-                    <input type="number" name="numCivico" id="numCivico" min="0" step="1">
-                    <label for="cap" class="indirizzo">CAP</label>
-                    <input type="number" name="cap" id="cap" min="0" step="1">
-                    <label for="città" class="indirizzo">Città</label>
-                    <input type="text" name="città" id="città">
-                </fieldset>
-            </main>
-            <footer>
-                <button type="submit">Abbonati</button>
-            </footer>
-        </form>
-    </body>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+		<title>Lezione HTML</title>
+		<style>
+			label {
+				display: block
+			}
+		</style>
+		<link rel="shortcut icon" href="images/Develhope.ico" type="image/x-icon">
+	</head>
+	<body>
+		<form action="pages/pagina1.html" method="post">
+			<div>
+				<label for="form-email">Email</label>
+				<input type="email" id="form-email" name="email" required="true"/>
+				<label for="form-pass">Password</label>
+				<input type="password" id="form-pass" name="pass" required/>
+			</div>
+			<div>
+				<label for="form-name">Nome e cognome</label>
+				<input type="text" id="form-name" name="name" required/>
+				<label for="form-dob">Data di nascita</label>
+				<input type="date" id="form-dob" name="dob" required/>
+				<label for="form-tel">Telefono</label>
+				<input type="tel" id="form-tel" name="tel" required/>
+			</div>
+			<div>
+				<label for="form-plan">Piano di abbonamento</label>
+				<select id="form-plan" name="plan">
+					<option value="0">Free</option>
+					<optgroup label="Mensili">
+						<option value="199">1.99€/mese</option>
+						<option value="599">5.99€/mese</option>
+						<option value="1199">11.99€/mese</option>
+					</optgroup>
+				</select>
+				<label for="form-pro">Piano PRO</label>
+				<input id="form-pro" name="pro" type="checkbox"/>
+			</div>
+			<div>
+				<label for="form-cc">Numero Carta</label>
+				<input id="form-cc" name="cc" type="text" required minlength="16" maxlength="16" pattern="[0-9]{16}" placeholder="Num. a 16 cifre"/>
+				<label for="form-cvc">CVC</label>
+				<input id="form-cvc" name="cvc" type="text" required minlength="3" maxlength="3" pattern="[0-9]{3}" placeholder="Num. a 3 cifre"/>
+				<label for="form-exp">Scadenza</label>
+				<input id="form-exp" name="exp" type="date" required/>
+				<label for="form-address">Indirizzo di fatturazione</label>
+				<input type="text" id="form-address" name="address" required/>
+			</div>
+			<button type="submit">Registrati</button>
+		</form>
+	</body>
 </html>
