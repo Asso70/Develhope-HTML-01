@@ -1,0 +1,18 @@
+:root {
+    --colore-sfondo: #011212;
+    --larghezza-palla: 100px;
+    --altezza-palla: 100px;
+    --colore-palla: #ff8800;
+    --bordo-palla: 50px;
+}
+
+body {
+    background-color: var(--colore-sfondo);
+}
+
+.ball {
+    width: var(--larghezza-palla);
+    height: var(--altezza-palla);
+    background-color: var(--colore-palla);
+    border-radius: var(--bordo-palla);
+}
