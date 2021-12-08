@@ -1,18 +1,47 @@
-:root {
-    --colore-sfondo: #011212;
-    --larghezza-palla: 100px;
-    --altezza-palla: 100px;
-    --colore-palla: #ff8800;
-    --bordo-palla: 50px;
-}
-
 body {
-    background-color: var(--colore-sfondo);
+	font-family: monospace;
 }
 
-.ball {
-    width: var(--larghezza-palla);
-    height: var(--altezza-palla);
-    background-color: var(--colore-palla);
-    border-radius: var(--bordo-palla);
+#expand-toggle {
+	display: none;
+}
+
+.expandable {
+	visibility: collapse;
+	background: gray;
+	color: white;
+}
+
+#expand-btn {
+	display: inline-block;
+	margin-top: 12px;
+	padding: 6px 12px;
+	background-color: #ff8888;
+	border: 1px solid;
+	border-radius: 3px;
+	transition: 0.3s;
+	font-size: 0px;
+}
+
+#expand-toggle:checked ~ table tr.expandable {
+	visibility: visible;
+}
+
+#expand-toggle:checked ~ label#expand-btn {
+	background-color: #88ff88;
+}
+
+/*
+Confesso: Il metodo qui sotto implementato per variare il testo della label a seconda dello stato di selezione della checkbox associata l'ho
+trovato su internet. Allucinante! Intendo che il metodo sia questo qui (senza toccare l'HTML se ho capito bene che va modificato solo il
+file CSS), no che ho dovuto barare :-D
+*/
+
+#expand-btn::before {
+	font-size: initial;
+	content: "Mostra righe";
+}
+
+#expand-toggle:checked ~ label#expand-btn::before {
+	content: "Nascondi righe";
 }
