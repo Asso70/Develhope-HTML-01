@@ -1,47 +1,32 @@
-body {
-	font-family: monospace;
+main {
+	display: flex;
 }
 
-#expand-toggle {
-	display: none;
-}
-
-.expandable {
-	visibility: collapse;
-	background: gray;
-	color: white;
-}
-
-#expand-btn {
-	display: inline-block;
-	margin-top: 12px;
-	padding: 6px 12px;
-	background-color: #ff8888;
+aside {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+	height: 95vh;
 	border: 1px solid;
-	border-radius: 3px;
-	transition: 0.3s;
-	font-size: 0px;
 }
 
-#expand-toggle:checked ~ table tr.expandable {
-	visibility: visible;
+span.utente {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	justify-self: flex-end;
+	align-items: center;
+	border: 1px solid blue;
 }
 
-#expand-toggle:checked ~ label#expand-btn {
-	background-color: #88ff88;
+span.utente img {
+	transform: scale(0.4, 0.4);
 }
 
-/*
-Confesso: Il metodo qui sotto implementato per variare il testo della label a seconda dello stato di selezione della checkbox associata l'ho
-trovato su internet. Allucinante! Intendo che il metodo sia questo qui (senza toccare l'HTML se ho capito bene che va modificato solo il
-file CSS), no che ho dovuto barare :-D
-*/
-
-#expand-btn::before {
-	font-size: initial;
-	content: "Mostra righe";
+img[alt="Develhope"] {
+	border: 1px solid;
 }
 
-#expand-toggle:checked ~ label#expand-btn::before {
-	content: "Nascondi righe";
+p {
+	border: 1px solid;
 }
