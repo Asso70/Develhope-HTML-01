@@ -1,47 +1,70 @@
+:root {
+	--raggio-bordo: 20px;
+}
+
 main {
-	display: flex;
-}
-
-aside {
-	display: flex;
-	flex-direction: column;
-	width: 200px;
-	height: 95vh;
-	justify-content: space-between;
-	border: 1px solid;
-}
-
-div.sopra {
+	width: 40vw;
+	height: 80vh;
+	border-radius: var(--raggio-bordo);
+	border: none;
 	display: flex;
 	flex-direction: column;
-	border: 1px solid yellow;
+	margin: 20px;
 }
 
-div.utente {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: center;
-	border: 1px solid blue;
+input#operazione {
+	margin: 0px;
+	height: 4vh;
+	border: none;
+	border-radius: var(--raggio-bordo) var(--raggio-bordo) 0px 0px;
+	text-align: right;
+	background-color: rgb(57, 67, 72);
+	padding: 1rem;
+	font-size: 2rem;
+	color: white;
 }
 
-div.utente img {
-	transform: scale(0.4, 0.4);
+div.tastiera {
+	display: grid;
+	grid-template-columns:repeat(4, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	border: none;
+	flex-grow: 1;
 }
 
-a {
-	color: #2b2b2b;
+button {
+	font-size: 1.7rem;
+	border: 1px solid rgb(123, 146, 163);
 }
 
-a:hover {
-	color: #2b2bb2;
-	transition-delay: 0.3s;
-}	
-
-img[alt="Develhope"] {
-	border: 1px solid;
+button.operatore {
+	background-color: rgb(203, 215, 223);
 }
 
-p {
-	border: 1px solid;
+
+button#uguale {
+	grid-row-start: 2;
+	grid-column-start: 4;
+	grid-row-end: 6;
+	background-color: rgb(255, 101, 110);
+}
+
+button.rig-99 {
+	border-bottom: none;
+}
+
+button.col-1 {
+	border-left: none;
+}
+
+button.col-99 {
+	border-right: none;
+}
+
+button.rig-99.col-1 {
+	border-bottom-left-radius: var(--raggio-bordo);
+}
+
+button.rig-99.col-99 {
+	border-bottom-right-radius: var(--raggio-bordo);
 }
