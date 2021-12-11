@@ -1,20 +1,29 @@
+:root {
+	--bordo: 0px solid;
+}
+
+body {
+	margin: 0px;
+}
+
 main {
 	display: flex;
+	margin: 0px;
 }
 
 aside {
 	display: flex;
 	flex-direction: column;
 	width: 200px;
-	height: 95vh;
+	height: 100vh;
 	justify-content: space-between;
-	border: 1px solid;
+	border: var(--bordo);
 }
 
 div.sopra {
 	display: flex;
 	flex-direction: column;
-	border: 1px solid yellow;
+	border: var(--bordo);
 }
 
 div.utente {
@@ -22,11 +31,12 @@ div.utente {
 	flex-direction: column;
 	justify-content: flex-end;
 	align-items: center;
-	border: 1px solid blue;
+	border: var(--bordo);
 }
 
 div.utente img {
-	transform: scale(0.4, 0.4);
+	transform: scale(0.4, 0.4) translate(0px, 85%);
+	border: var(--bordo);
 }
 
 a {
@@ -39,9 +49,9 @@ a:hover {
 }	
 
 img[alt="Develhope"] {
-	border: 1px solid;
+	border: var(--bordo);;
 }
 
-p {
-	border: 1px solid;
+h3 {
+	border: var(--bordo);
 }
