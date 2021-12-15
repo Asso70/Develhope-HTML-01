@@ -1,70 +1,108 @@
 :root {
-	--raggio-bordo: 20px;
+	--raggio-bordo: 30px;
+}
+
+@media screen and (min-width: 1440px) {
+	main {
+		width: 1440px;
+		height: 900px;
+		justify-content: space-evenly;
+	}
+}
+
+@media screen and (max-width: 834px) and (min-width: 500px) {
+	main {
+		width: 834px;
+		height: 1194px;
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	main {
+		width: 500px;
+		height: 926px;
+		flex-direction: column;
+		flex-wrap: nowrap;
+	}
 }
 
 main {
-	width: 40vw;
-	height: 80vh;
-	border-radius: var(--raggio-bordo);
-	border: none;
+	display: flex;
+	overflow: hidden;
+}
+
+div.card {
+	margin-top: 10%;
 	display: flex;
 	flex-direction: column;
-	margin: 20px;
+	min-width: 290px;
+	min-height: 480px;
+	max-width: 290px;
+	max-height: 480px;
+	border-radius: var(--raggio-bordo);
+	background: linear-gradient(#A1A1A1, #F2F2F2);
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
-input#operazione {
-	margin: 0px;
-	height: 4vh;
-	border: none;
-	border-radius: var(--raggio-bordo) var(--raggio-bordo) 0px 0px;
-	text-align: right;
-	background-color: rgb(57, 67, 72);
-	padding: 1rem;
-	font-size: 2rem;
-	color: white;
+div.card header {
+	display: flex;
+	align-items: center;
+	height: 12%;
 }
 
-div.tastiera {
-	display: grid;
-	grid-template-columns:repeat(4, 1fr);
-	grid-template-rows: repeat(5, 1fr);
-	border: none;
+svg#palla, svg#puntino {
+	width: 20%;
+	height: 100%
+}
+
+#palla circle {
+	fill: white;
+}
+
+div.utente {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 60%;
 	flex-grow: 1;
 }
 
-button {
-	font-size: 1.7rem;
-	border: 1px solid rgb(123, 146, 163);
+div.utente label.nome {
+	font-size: 1.2em;
 }
 
-button.operatore {
-	background-color: rgb(203, 215, 223);
+div.utente label.data {
+	color: white;
 }
 
-
-button#uguale {
-	grid-row-start: 2;
-	grid-column-start: 4;
-	grid-row-end: 6;
-	background-color: rgb(255, 101, 110);
+section {
+	display: flex;
+	flex-direction: column;
 }
 
-button.rig-99 {
-	border-bottom: none;
+section>img {
+	width: 100%;
 }
 
-button.col-1 {
-	border-left: none;
+div.icona {
+	margin-left: 10%;
+	margin-top: 20px;
+	width: 20%;
+	height: 10%;
+	display: flex;
+	justify-content: space-between;
 }
 
-button.col-99 {
-	border-right: none;
+section p {
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: justify;
 }
 
-button.rig-99.col-1 {
-	border-bottom-left-radius: var(--raggio-bordo);
-}
-
-button.rig-99.col-99 {
-	border-bottom-right-radius: var(--raggio-bordo);
+section p::before {
+	content: "Gatto: ";
+	font-weight: bold;
 }
