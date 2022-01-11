@@ -4,15 +4,20 @@
 // developer => 1500
 // default => 1000
 function calculateSalary(role) {
-  let salario = 1000;
-  if(role === "ceo") {
-    salario = 2200;
-  }
-  else if(role === "manager" || role === "cto") {
-    salario = 1800;
-  }
-  else if(role === "developer") {
-    salario = 1500;
+  let salario = 0;
+  switch(role) {
+    case "ceo":
+      salario = 2200;
+      break;
+    case "manager":
+    case "cto":
+      salario = 1800;
+      break;
+    case "developer":
+      salario = 1500;
+      break;
+    default:
+      salario = 1000;
   }
   return salario;
 }
