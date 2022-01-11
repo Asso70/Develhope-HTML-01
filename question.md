@@ -1,6 +1,9 @@
-# Variables Declarations - Exercise 3
-In questo esercizio occorre implementare la funzione `addStudent`, la quale si occupa di aggiungere un elemento all'array `students` dichiarato tramite `const`.
+# Conditionals & Loops - Exercise 1
+Implementare, tramite i blocchi condizionali `if / else-if / else`, la funzione `calculateSalary`, la quale, dato in input un ruolo, calcola il salario corrispondente.
+Per ogni ruolo il salario percepito è il seguente:
 
-Qual è il metodo che possiamo utilizzare per aggiungere un elemento all'array?
-
-Sai individuare il motivo per cui abbiamo la possibilità di aggiungere un elemento all'array nonostante abbiamo dichiarato la variabile come `readonly`?
+* ceo => 2200€
+* manager => 1800€
+* cto => 1800€
+* developer => 1500€
+* default => 1000€
