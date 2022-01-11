@@ -1,13 +1,8 @@
-function canPlay() {
-  const personName = 'Paul';
+const students = ['Paul', 'George', 'Lucas'];
 
-  if (true) {
-    personName = 'George'; // Argh! Voglio che personName sia una variabile di sola lettura
-  }
-
-  personName += ' plays football';
-
-  console.log(personName);
+function addStudent(student) {
+  students.push(student) // Ciò possibile nonostante la solo leggibilità della variabile associata all'array poiché essa contiene il riferimento o indirizzo dell'array, no il contenuto
 }
 
-canPlay();
+addStudent('Marco');
+console.log(students);
