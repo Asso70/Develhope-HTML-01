@@ -1,35 +1,22 @@
-// ceo => 2200
-// manager => 1800
-// cto => 1800
-// developer => 1500
-// default => 1000
-function calculateSalary(role) {
-  let salario = 0;
-  switch(role) {
-    case "ceo":
-      salario = 2200;
-      break;
-    case "manager":
-    case "cto":
-      salario = 1800;
-      break;
-    case "developer":
-      salario = 1500;
-      break;
-    default:
-      salario = 1000;
-  }
-  return salario;
+function adultFilter(persons) {
+  return persons.filter(function(persona) {
+    return persona.age >= 18;
+  });
 }
 
-const ceoSalary = calculateSalary('ceo');
-const managerSalary = calculateSalary('manager');
-const ctoSalary = calculateSalary('cto');
-const developerSalary = calculateSalary('developer');
-const otherSalary = calculateSalary('other');
+const persons = [
+  { name: 'Paul', age: 16 },
+  { name: 'George', age: 17 },
+  { name: 'Lucas', age: 21 },
+  { name: 'Marco', age: 32 },
+  { name: 'Peter', age: 18 },
+  { name: 'Carl', age: 13 },
+  { name: 'Simon', age: 24 },
+  { name: 'Mark', age: 15 },
+  { name: 'Sandra', age: 34 },
+  { name: 'Alice', age: 28 }
+];
 
-console.log(ceoSalary);
-console.log(managerSalary);
-console.log(ctoSalary);
-console.log(developerSalary);
-console.log(otherSalary);
+const adults = adultFilter(persons);
+console.log(persons);
+console.log(adults);
