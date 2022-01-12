@@ -1,17 +1,9 @@
 /*
-const sum = function (a, b) {
-  return a + b;
+const concat = function (arr1, arr2) {
+  return arr1.concat(arr2);
 }
 */
 
-const sum = (a, b) => a + b;
+const concat = (arr1, arr2) => arr1.concat(arr2);
 
-/*
-const log = function (value) {
-  console.log(value);
-}
-*/
-
-const log = value => console.log(value);
-
-log(sum(2, 5));
+console.log(concat([2, 4], [5, 1]));
