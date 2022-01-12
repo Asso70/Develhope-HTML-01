@@ -1,7 +1,11 @@
 function adultFilter(persons) {
-  return persons.filter(function(persona) {
-    return persona.age >= 18;
-  });
+  const maggiorenni = [];
+  for(let i = 0; i < persons.length; i = i + 1) { // Il dono della sintesi rispedito al mittente!
+    if(persons[i].age >= 18) {
+      maggiorenni.push(persons[i]);
+    }
+  }
+  return maggiorenni;
 }
 
 const persons = [
