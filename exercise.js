@@ -1,10 +1,9 @@
-function nicknameMap(persons) {
-  const soprannomi = [];
+function calculateAverageAge(persons) {
+  let etaTot = 0;
   for(let i = 0; i < persons.length; i = i + 1) { // Il dono della sintesi rispedito al mittente!
-    //soprannomi.push({soprannome: persons[i].name + "-" + persons[i].age}); o sennò scritto come sotto
-    soprannomi.push({soprannome: `${persons[i].name}-${persons[i].age}`});
+    etaTot = etaTot + persons[i].age;
   }
-  return soprannomi;
+  return etaTot / persons.length;
 }
 
 const persons = [
@@ -20,6 +19,6 @@ const persons = [
   { name: 'Alice', age: 28 }
 ];
 
-const nicknames = nicknameMap(persons);
+const averageAge = calculateAverageAge(persons);
 console.log(persons);
-console.log(nicknames);
+console.log(averageAge);
