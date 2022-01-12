@@ -1,18 +1,9 @@
-function getKeys(obj) {
-  let proprietaa = [];
-  for (const proprieta in obj) {
-    proprietaa.push(proprieta);
+function sumUntil(maxValue) {
+  let somma = 0;
+  for(let i = 1; i <= maxValue; i = i + 1) { // Il dono della sintesi rispedito al mittente!
+    somma = somma + i;
   }
-  return proprietaa;
+  return somma;
 }
 
-const person = {
-  firstName: 'John',
-  lastName: 'Doe',
-  age: 32,
-  city: 'Rome',
-  job: 'Developer',
-};
-
-const keys = getKeys(person);
-console.log(keys);
+console.log(sumUntil(5));

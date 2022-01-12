@@ -1,16 +1,11 @@
-# Conditionals & Loops - Exercise 6
-Implementare, tramite blocchi condizionali e cicli, la funzione `getKeys`, la quale, dato in input un qualsiasi oggetto, restituisce la lista delle chiavi presenti al suo interno
+# Conditionals & Loops - Exercise 7
+Implementare, tramite blocchi condizionali e cicli, la funzione `sumUntil`, la quale, dato in input un valore, effettua la somma di tutti i numeri che vanno da `1` fino al valore passato come parametro
 
 Esempio:
 ```
-const person = {
-  firstName: 'John',
-  lastName: 'Doe',
-  age: 32,
-  city: 'Rome',
-  job: 'Developer',
-};
+function sumUntil(maxValue) {
+  // ...
+}
 
-const keys = getKeys(person);
-console.log(keys); // ['firstName', 'lastName', 'age', 'city', 'job']
+console.log(sumUntil(5)); // OUTPUT: 1 + 2 + 3 + 4 + 5 = 15
 ```
