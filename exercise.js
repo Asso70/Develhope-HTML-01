@@ -1,9 +1,17 @@
-function sumUntil(maxValue) {
-  let somma = 0;
-  for(let i = 1; i <= maxValue; i = i + 1) { // Il dono della sintesi rispedito al mittente!
-    somma = somma + i;
-  }
-  return somma;
+/*
+const sum = function (a, b) {
+  return a + b;
 }
+*/
 
-console.log(sumUntil(5));
+const sum = (a, b) => a + b;
+
+/*
+const log = function (value) {
+  console.log(value);
+}
+*/
+
+const log = value => console.log(value);
+
+log(sum(2, 5));
