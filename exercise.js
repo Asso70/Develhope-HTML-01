@@ -1,24 +1,18 @@
-function calculateAverageAge(persons) {
-  let etaTot = 0;
-  for(let i = 0; i < persons.length; i = i + 1) { // Il dono della sintesi rispedito al mittente!
-    etaTot = etaTot + persons[i].age;
+function getKeys(obj) {
+  let proprietaa = [];
+  for (const proprieta in obj) {
+    proprietaa.push(proprieta);
   }
-  return etaTot / persons.length;
+  return proprietaa;
 }
 
-const persons = [
-  { name: 'Paul', age: 16 },
-  { name: 'George', age: 17 },
-  { name: 'Lucas', age: 21 },
-  { name: 'Marco', age: 32 },
-  { name: 'Peter', age: 18 },
-  { name: 'Carl', age: 13 },
-  { name: 'Simon', age: 24 },
-  { name: 'Mark', age: 15 },
-  { name: 'Sandra', age: 34 },
-  { name: 'Alice', age: 28 }
-];
+const person = {
+  firstName: 'John',
+  lastName: 'Doe',
+  age: 32,
+  city: 'Rome',
+  job: 'Developer',
+};
 
-const averageAge = calculateAverageAge(persons);
-console.log(persons);
-console.log(averageAge);
+const keys = getKeys(person);
+console.log(keys);
