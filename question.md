@@ -1,2 +1,2 @@
-# Conditionals & Loops - Exercise 3
-Implementare, tramite blocchi condizionali e cicli, la funzione `adultFilter`, la quale, dato un array di persone, filtra e restituisce soltanto coloro che sono maggiorenni
+# Conditionals & Loops - Exercise 4
+Implementare, tramite blocchi condizionali e cicli, la funzione `nicknameMap`, la quale, dato un array di persone, crea un array di nickname. Il nickname deve essere formato nel seguente modo: `<name>-<age>`

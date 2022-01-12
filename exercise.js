@@ -1,7 +1,10 @@
-function adultFilter(persons) {
-  return persons.filter(function(persona) {
-    return persona.age >= 18;
-  });
+function nicknameMap(persons) {
+  const soprannomi = [];
+  for(let i = 0; i < persons.length; i = i + 1) { // Il dono della sintesi rispedito al mittente!
+    //soprannomi.push({soprannome: persons[i].name + "-" + persons[i].age}); o sennò scritto come sotto
+    soprannomi.push({soprannome: `${persons[i].name}-${persons[i].age}`});
+  }
+  return soprannomi;
 }
 
 const persons = [
@@ -17,6 +20,6 @@ const persons = [
   { name: 'Alice', age: 28 }
 ];
 
-const adults = adultFilter(persons);
+const nicknames = nicknameMap(persons);
 console.log(persons);
-console.log(adults);
+console.log(nicknames);
