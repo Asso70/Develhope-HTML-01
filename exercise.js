@@ -1,24 +1,31 @@
-function createStore() {
-  const assortimentoo = []; /* Riecco la doppia lettera finale. Ebbene, laddove non si vorrà nominare un array con l'entità del singolo elemento declinata al plurale
-                            (es. in questo caso sarebbe stato "articoli") ma si preferirà utilizzare un termine esprimente collettività, tale termine, che verrà declinato al
-                            singolare, avrà appunto la doppia finale per convenzionalmente (©opyright: Stefano Assogna) indicare che è riferito a un array */
-  return function(articolo) {
-    assortimentoo.push(articolo);
-    assortimentoo.forEach(ele => {
-      console.log(`Item #${ele.id}: ${ele.name}`);
-    });
-  }    
-}
+function calculate() {
+  let parziale = 0;
+  return {
+    add: function(numero) {
+      parziale = parziale + numero;
+      return this;
+    },
 
-const redPants = { id: 1, name: 'Red Pants' };
-const whiteHat = { id: 2, name: 'White Hat' };
-const blackSneakers = { id: 3, name: 'Black Sneakers' };
+    multiply: function(numero) {
+      parziale = parziale * numero;
+      return this;
+    },
 
-console.log('--- Dress Store ---');
-const dressStore = createStore();
-dressStore(redPants);
-dressStore(whiteHat)
+    sub: function(numero) {
+      parziale = parziale - numero;
+      return this;
+    },
 
-console.log('--- Shoes Store ---');
-const shoesStore = createStore();
-shoesStore(blackSneakers);
+    divide: function(numero) {
+      parziale = parziale / numero;
+      return this;
+    },
+
+    printResult: function() {
+      console.log(parziale);
+    }
+  }
+};
+
+const calculator = calculate();
+calculator.add(2).add(4).multiply(3).sub(1).sub(3).divide(2).printResult(); // Il risultato sarà: 7
