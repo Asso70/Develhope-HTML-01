@@ -1,20 +1,15 @@
-const person1 = {
+const person = {
   firstName: 'John',
   lastName: 'Doe',
   age: 25,
-  address: {
-    state: 'Italy',
-    region: 'Lazio',
-    city: 'Rome'
+  job: 'Web Developer',
+  fullName: function() {
+    return `${this.firstName} ${this.lastName}`;
+  },
+  info: function() {
+    return `${this.fullName()}, ${this.age} - ${this.job}`;
   }
-};
+}
 
-// Argh! Nonostante abbia utilizzato Object.assign(), modificando la proprietà "address",
-// viene modificato il riferimento all'oggetto person1
-//const person2 = Object.assign({}, person1);
-const person2 = JSON.parse(JSON.stringify(person1)); // E noi risolviamo così :-)
-person2.address.region = 'Lombardia';
-person2.address.city = 'Milan';
-
-console.log(person1);
-console.log(person2);
+console.log(person.fullName()); // John Doe
+console.log(person.info()); // John Doe, 25 - Web Developer
