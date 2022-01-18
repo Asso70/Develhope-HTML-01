@@ -1,15 +1,20 @@
 const person1 = {
   firstName: 'John',
   lastName: 'Doe',
-  age: 25
+  age: 25,
+  address: {
+    state: 'Italy',
+    region: 'Lazio',
+    city: 'Rome'
+  }
 };
 
-// Modifica la linea sottostante affinché venga creata e assegnata a person2 
-// una copia esatta di person1, permettendo così di modificare il "firstName" di person2,
-// senza che venga modificato anche il valore "firstName" di person1
-const person2 = Object.assign({}, person1);
-
-person2.firstName = 'Simon';
+// Argh! Nonostante abbia utilizzato Object.assign(), modificando la proprietà "address",
+// viene modificato il riferimento all'oggetto person1
+//const person2 = Object.assign({}, person1);
+const person2 = JSON.parse(JSON.stringify(person1)); // E noi risolviamo così :-)
+person2.address.region = 'Lombardia';
+person2.address.city = 'Milan';
 
 console.log(person1);
 console.log(person2);
