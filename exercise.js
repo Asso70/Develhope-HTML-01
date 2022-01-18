@@ -1,15 +1,11 @@
 const person = {
-  firstName: 'John',
-  lastName: 'Doe',
-  age: 25,
-  job: 'Web Developer',
-  fullName: function() {
-    return `${this.firstName} ${this.lastName}`;
-  },
-  info: function() {
-    return `${this.fullName()}, ${this.age} - ${this.job}`;
-  }
+  firstName: 'Mario',
+  lastName: 'Rossi',
+  age: 25
 }
 
-console.log(person.fullName()); // John Doe
-console.log(person.info()); // John Doe, 25 - Web Developer
+// Print values of person using Object.keys
+const prop = Object.keys(person);
+prop.forEach(function(ele) {
+  console.log(`${ele}: ${person[ele]}`);
+});
