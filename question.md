@@ -1,10 +1,4 @@
-# Closure - Exercise 5
-Implementare la funzione `memoize` che, data in input la funzione per il calcolo del fattoriale, restituisce una closure che accetta come argomento un numero su cui eseguire la funzione per il calcolo del fattoriale, verifica se il risultato è già presente all'interno della variabile `cache`, se è presente restituisce immediatamente il risultato memorizzato precedentemente, altrimenti esegue la funzione passata come argomento e memorizza il risultato all'interno della variabile `cache`, così da servire il risultato cachato precedentemente qualora venga richiesto il fattoriale per lo stesso numero.
+# Object Copying - Exercise 1
+In questo esercizio sono stati creati due oggeti: `person1` e `person2`. All'oggetto `person2` è stato assegnato l'oggetto `person1`. Si desidera che venga modificata la proprietà `firstName` dell'oggetto `person2` in "Simon".
 
-Esempio:
-```
-factorial = memoize(factorial);
-console.log(factorial(10)); // Calculating result for 3628800
-console.log(factorial(6)); // Fetching from cache for 720
-console.log(factorial(5)); // Fetching from cache for 120
-```
+Sai spiegare il perché modificando l'oggetto `person2` viene modificato anche l'oggetto `person1`?
