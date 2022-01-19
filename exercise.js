@@ -1,7 +1,7 @@
 const person = {
   firstName: 'Mario',
   lastName: 'Rossi',
-  age: 251
+  age: 25
 }
 
 // Print values of person using Object.keys
