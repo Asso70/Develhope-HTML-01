@@ -8,4 +8,4 @@ const person = {
 const prop = Object.keys(person);
 prop.forEach(function(ele) {
   console.log(`${ele}: ${person[ele]}`);
-}); 
+});
