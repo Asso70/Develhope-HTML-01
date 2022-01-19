@@ -1,7 +1,5 @@
-const person = {
-  firstName: 'John',
-  lastName: 'Doe'
-};
+const order = {};
 
-console.log(person.address?.city); // Argh! Cannot read property 'city' of undefined
-console.log(person.fullName?.()); // Argh! Cannot read property 'fullName()' of undefined
+if (order && order.customer && order.customer.address && !order.customer.address.city) {
+  console.log('City is required');
+}
