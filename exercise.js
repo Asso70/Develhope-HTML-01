@@ -7,4 +7,4 @@ const person = {
 // Print values of person using Object.keys
 Object.keys(person).forEach(function(ele) {
   console.log(`${ele}: ${person[ele]}`);
-}); 
+});
