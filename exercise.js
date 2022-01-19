@@ -1,22 +1,61 @@
-function calculateAverageAge(persons) {
-  return persons.reduce(function(retPrec, ele) {
-    return retPrec + ele.age;
-  }, 0) / persons.length;
+function uncompletedNotes(notes) {
+  return notes.filter(function(ele) {
+    return !ele.todos.every(function(ele) {
+      return ele.done === true;
+    })
+  });
 }
 
-const persons = [
-  { name: 'Paul', age: 16 },
-  { name: 'George', age: 17 },
-  { name: 'Lucas', age: 21 },
-  { name: 'Marco', age: 32 },
-  { name: 'Peter', age: 18 },
-  { name: 'Carl', age: 13 },
-  { name: 'Simon', age: 24 },
-  { name: 'Mark', age: 15 },
-  { name: 'Sandra', age: 34 },
-  { name: 'Alice', age: 28 }
-];
+const notes = [
+  {
+    id: 1,
+    description: 'Workout program',
+    todos: [
+      {
+        id: 1,
+        name: 'Push ups - 10 x 3',
+        done: false
+      },
+      {
+        id: 2,
+        name: 'Abdominals - 20 x 3',
+        done: true
+      },
+      {
+        id: 3,
+        name: 'Tapis Roulant - 15min',
+        done: true
+      }
+    ]
+  },
+  {
+    id: 2,
+    description: 'Front-end Roadmap',
+    todos: [
+      {
+        id: 1,
+        name: 'Learn HTML',
+        done: true
+      },
+      {
+        id: 2,
+        name: 'Learn CSS',
+        done: true
+      },
+      {
+        id: 3,
+        name: 'Learn JavaScript',
+        done: true
+      },
+      {
+        id: 4,
+        name: 'Learn Angular',
+        done: true
+      }
+    ]
+  }
+]
 
-const average = calculateAverageAge(persons);
-console.log(persons);
-console.log(average);
+const notesInProgress = uncompletedNotes(notes);
+console.log('All notes: ', notes);
+console.log('Notes In Progress: ', notesInProgress);
