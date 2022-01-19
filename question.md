@@ -1,2 +1,2 @@
-# Object Constructor - Exercise 1
-Creare l'oggetto `person` e definire al suo interno i metodi getters / setters per le proprietà: `firstName` e `lastName`. Definire all'interno dell'oggetto anche il metodo `fullName()` che si occupa di concatenare e restituire il nome e il cognome della persona. Infine, costruire due oggetti: `john` e `simon`, assegnare ad entrambi il valore di `firstName` e `lastName` e stampare in console il nome completo
+# Object Constructor - Exercise 2
+Implementare la funzione `Person` che accetta e assegna due argomenti: `firstName` e `lastName` e definisce il metodo `fullName()`, il quale si occupa di concatenare e restituire il nome completo. Infine, istanziare due oggetti: `john` e `simon` tramite la keyword `new` utilizzando la funzione `Person` e stampare in console il nome completo
