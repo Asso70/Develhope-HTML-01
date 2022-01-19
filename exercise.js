@@ -1,6 +1,6 @@
-function adultFilter(persons) {
-  return persons.filter(function(ele) {
-    return ele.age >= 18;
+function nicknameMap(persons) {
+  return persons.map(function(ele) {
+    return `${ele.name}-${ele.age}`;
   });
 }
 
@@ -17,6 +17,6 @@ const persons = [
   { name: 'Alice', age: 28 }
 ];
 
-const adults = adultFilter(persons);
+const nicknames = nicknameMap(persons);
 console.log(persons);
-console.log(adults);
+console.log(nicknames);
