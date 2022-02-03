@@ -1,2 +1,2 @@
-# Classes - Exercise 2
-Definire la classe `Developer` che eredita dalla classe `Person` e, oltre alle proprietà `firstName` e `lastName`, accetta nel costruttore anche la proprietà `role`.
+# Classes - Exercise 3
+Definire all'interno della classe `Person` un metodo statico che, dato in input un object literal, istanzia un oggetto `Person`.
