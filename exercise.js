@@ -6,29 +6,27 @@ class BankAccount {
   }
 
   deposit(amount) {
-    // throw an exception if amount is negative
-    try {
-      if(amount < 0) {
-        throw new Error("Deposit error: Cannot deposit negative amount");
-      }
-      this.#amount += amount;
+    if (amount < 0) {
+      throw new Error('The amount provided cannot be negative');
     }
-    catch(e) {
-      console.log(e.message);
-    }
+
+    this.#amount += amount;
   }
 
   withdraw(amount) {
-    // throw an exception if amount is negative or if withdrawal amount is greater than current amount
+  // Nell'esercizio precedente davo per scontato di dover evitare il crash. E ho messo try-catch su entrambi i metodi di modifica conto (pur avendo in realtà prima
+  // testato che andasse in crash senza i try-catch). OK, cmq ora geatisco su questo (sull'altro sarebbe identico a come già fatto nell'esercizio precedente)
     try {
-      if(amount < 0) {
-        throw new Error("Withdrawal error: Cannot withdraw negative amount");
+      if (amount < 0) {
+        throw new Error('The amount provided cannot be negative');
       }
-      else if(amount > this.#amount) {
-        throw new Error("Withdrawal error: Cannot withdraw more than current amount");
+
+      if (this.#amount < amount) {
+        throw new Error('You cannot withdraw more than account balance');
       }
+
       this.#amount -= amount;
-    }
+      }
     catch(e) {
       console.log(e.message);
     }
@@ -39,8 +37,9 @@ class BankAccount {
   }
 }
 
+// Handle errors to avoid app crash
 const bankAccount = new BankAccount(1000);
 bankAccount.deposit(500);
 bankAccount.deposit(200);
-bankAccount.withdraw(10000); // This operation should not be possible, because you cannot withdraw more than the account balance
+bankAccount.withdraw(10000);
 bankAccount.view();
