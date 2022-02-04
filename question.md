@@ -1,2 +1,4 @@
-# Classes - Exercise 7
-Definire la classe `Person` che accetta tre parametri nel costruttore: `firstName`, `lastName` e `age` e definisce per ciascuna di queste tre proprietà i rispettivi metodi getters e setters. Definire inoltre anche il metodo getter `fullName` che si occupa di restituire le proprietà nome e cognome concatenate.
+# Error handling - Exercise 1
+Implementare all'interno della classe `BankAccount` un controllo sui metodi `deposit` e `withdraw`.
+Entrambi i metodi devono poter lanciare un errore qualora venisse passato un `amount` negativo.
+Il metodo `withdraw` deve poter lanciare un errore anche qualora venisse passato un `amount` superiore rispetto al totale presente sul conto corrente.

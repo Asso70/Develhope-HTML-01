@@ -1,45 +1,46 @@
-class Person {
-  constructor(firstName, lastName, age) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.age = age;
-    this.fullName = this.getFullName();
+class BankAccount {
+  #amount = 0;
+
+  constructor(initialAmount) {
+    this.#amount = initialAmount;
   }
 
-// I prossimi 6 metodi non sono necessari essendo i membri (o le proprietà) pubblici dunque direttamente accessibili in lettura e scrittura
-  getFirstName() {
-    return this.firstName;
+  deposit(amount) {
+    // throw an exception if amount is negative
+    try {
+      if(amount < 0) {
+        throw new Error("Deposit error: Cannot deposit negative amount");
+      }
+      this.#amount += amount;
+    }
+    catch(e) {
+      console.log(e.message);
+    }
   }
 
-  getLastName() {
-    return this.lastName;
+  withdraw(amount) {
+    // throw an exception if amount is negative or if withdrawal amount is greater than current amount
+    try {
+      if(amount < 0) {
+        throw new Error("Withdrawal error: Cannot withdraw negative amount");
+      }
+      else if(amount > this.#amount) {
+        throw new Error("Withdrawal error: Cannot withdraw more than current amount");
+      }
+      this.#amount -= amount;
+    }
+    catch(e) {
+      console.log(e.message);
+    }
   }
 
-  getAge() {
-    return this.age;
-  }
-
-  setFirstName(firstName) {
-    this.firstName = firstName;
-  }
-
-  setLastName(lastName) {
-    this.lastName = lastName;
-  }
-
-  setAge(age) {
-    this.age = age;
-  }
-
-  getFullName() {
-    return `${this.firstName} ${this.lastName}`;
+  view() {
+    console.log(this.#amount);
   }
 }
 
-const person = new Person('Mario', 'Rossi', 25);
-console.log(person.fullName);
-
-person.firstName = 'Maria';
-person.lastName = 'Verdi';
-// Qui si sarebbe dovuto chiamare il metodo getter ma immagino la traccia degli esercizi non vada cambiata
-console.log(person.fullName);
+const bankAccount = new BankAccount(1000);
+bankAccount.deposit(500);
+bankAccount.deposit(200);
+bankAccount.withdraw(10000); // This operation should not be possible, because you cannot withdraw more than the account balance
+bankAccount.view();
