@@ -1,2 +1,2 @@
-# Classes - Exercise 6
-Definire la classe `AreaCalculator` che, tramite un metodo statico, si occupa di calcolare l'area della figura passata come parametro. Il metodo deve essere capace di calcolare l'area del quadrato, rettangolo e cerchio.
+# Classes - Exercise 7
+Definire la classe `Person` che accetta tre parametri nel costruttore: `firstName`, `lastName` e `age` e definisce per ciascuna di queste tre proprietà i rispettivi metodi getters e setters. Definire inoltre anche il metodo getter `fullName` che si occupa di restituire le proprietà nome e cognome concatenate.
