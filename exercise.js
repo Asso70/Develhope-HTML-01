@@ -1,7 +1,3 @@
-function isAdult({age}) {
-  return age >= 18;
-}
-
 const person = {
   id: 1,
   firstName: 'Mario',
@@ -9,4 +5,6 @@ const person = {
   age: 25
 };
 
-console.log(isAdult(person));
+for (let [key, value] of Object.entries(person)) {
+  console.log(`${key}: ${value}`);
+}
