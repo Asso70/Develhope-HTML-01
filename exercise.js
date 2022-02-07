@@ -1,13 +1,17 @@
-let num1 = 10;
-let num2 = 20;
-console.log('Before swap: ', num1, num2); // Before swap: 10 20
+const person = {
+  id: 1,
+  firstName: 'Mario',
+  lastName: 'Rossi',
+  age: 25
+};
 
-// Variable swapping
 /*
-let temp = num2;
-num2 = num1;
-num1 = temp;
+const id = person.id;
+const firstName = person.firstName;
+const lastName = person.lastName;
+const age = person.age;
 Altrimenti:
 */
-[num1, num2] = [num2, num1];
-console.log('After swap: ', num1, num2); // After swap: 20 10
+const {id, firstName, lastName, age} = person;
+
+console.log(id, firstName, lastName, age);
