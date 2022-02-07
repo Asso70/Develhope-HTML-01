@@ -1,45 +1,13 @@
-class BankAccount {
-  #amount = 0;
+let num1 = 10;
+let num2 = 20;
+console.log('Before swap: ', num1, num2); // Before swap: 10 20
 
-  constructor(initialAmount) {
-    this.#amount = initialAmount;
-  }
-
-  deposit(amount) {
-    if (amount < 0) {
-      throw new NegativeAmountError('The amount provided cannot be negative'); // Use custom Error class
-    }
-
-    this.#amount += amount;
-  }
-
-  withdraw(amount) {
-    if (amount < 0) {
-      throw new NegativeAmountError('The amount provided cannot be negative'); // Use custom Error class
-    }
-
-    if (this.#amount < amount) {
-      throw new WithdrawNotPermittedError('You cannot withdraw more than account balance'); // Use custom Error class
-    }
-
-    this.#amount -= amount;
-  }
-
-  view() {
-    console.log(this.#amount);
-  }
-}
-
-try {
-  const bankAccount = new BankAccount(1000);
-  bankAccount.deposit(500);
-  bankAccount.deposit(200);
-  bankAccount.withdraw(10000);
-  bankAccount.view();
-} catch (e) {
-  console.log('Something went wrong during bank account operations');
-  
-}
-
-class NegativeAmountError extends Error {};
-class WithdrawNotPermittedError extends Error {};
+// Variable swapping
+/*
+let temp = num2;
+num2 = num1;
+num1 = temp;
+Altrimenti:
+*/
+[num1, num2] = [num2, num1];
+console.log('After swap: ', num1, num2); // After swap: 20 10
