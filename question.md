@@ -1,2 +1,2 @@
-# Destructuring assignment - Exercise 2
-Utilizzare la destrutturazione per eseguire l'assegnazione dei valori tramite un'unica linea di codice
+# Destructuring assignment - Exercise 3
+Utilizzare la destrutturazione per semplificare il controllo sull'età della persona.
