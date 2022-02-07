@@ -5,6 +5,5 @@ const person = {
   age: 25
 };
 
-for (let [key, value] of Object.entries(person)) {
-  console.log(`${key}: ${value}`);
-}
+const { id, firstName: name, lastName: surname, age: old } = person;
+console.log(id, name, surname, old);
