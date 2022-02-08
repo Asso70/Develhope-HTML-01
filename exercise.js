@@ -1,14 +1,5 @@
-const person = {
-  id: 1,
-  firstName: 'Mario',
-  lastName: 'Rossi',
-  age: 25,
-};
+function sum(...nums) {
+  return nums.reduce(function(preVal, currVal) {return preVal + currVal});
+}
 
-const json = JSON.parse(JSON.stringify(person), function(key, value) {
-  if(typeof value === "number" || typeof value === "object") {
-    return value;
-  }
-});
-
-console.log(json); // Should return: { id: 1, age: 25 }
+console.log(sum(1, 2, 3, 4, 5));
