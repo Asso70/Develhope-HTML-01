@@ -1,5 +1,19 @@
-function sum(...nums) {
-  return nums.reduce(function(preVal, currVal) {return preVal + currVal});
-}
+const person = {
+  id: 1,
+  firstName: 'Mario',
+  lastName: 'Rossi',
+  age: 25
+};
 
-console.log(sum(1, 2, 3, 4, 5));
+/*
+const id = person.id;
+const personInfo = {
+  firstName: person.firstName,
+  lastName: person.lastName,
+  age: person.age
+};
+Altrimenti: */
+
+({id, ...personInfo} = person);
+
+console.log(id, personInfo);

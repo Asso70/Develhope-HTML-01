@@ -1,2 +1,2 @@
-# Rest parameters and spread syntax - Exercise 1
-La funzione `sum` presenta un elevato numero di parametri in ingresso, come possiamo migliorare il codice affinché eccetti un numero indefinito di valori da sommare?
+# Rest parameters and spread syntax - Exercise 2
+Come posso migliorare la leggibilità del codice estraendo la proprietà `id` dall'oggetto `person` e mantenere aggregate il resto delle proprietà all'interno dell'oggetto `personInfo`?
