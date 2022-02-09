@@ -21,14 +21,21 @@ const persons = [
 
 function fetchPersonById(id) {
   return new Promise((resolve, reject) => {
-    const person = persons.find(item => item.id === id);
-    if(person) {
-      setTimeout(() => resolve(person), 1000);
-    }
-    else {
-      reject(new Error("Chiiiiiiiii?"));
-    }
+    setTimeout(() => {
+      const person = persons.find(item => item.id === id);
+      
+      if (person) {
+        return resolve(JSON.stringify(person));
+      }
+
+      return reject(`Person with id: ${id} doesn't exist`);
+    }, 1000);
   });
 }
 
-fetchPersonById(5).then((person) => console.log(person));
+// core here
+fetchPersonById(2).then(function(person) {
+  return JSON.parse(person);
+}).then(function(person) {
+  console.log(person);
+});
