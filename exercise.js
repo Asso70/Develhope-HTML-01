@@ -19,16 +19,16 @@ const persons = [
   }
 ];
 
-// code here
 function fetchPersonById(id) {
-  return new Promise(function(resolve, reject) {
-    resolve(persons.find(function(item) {
-      return item.id === id;
-    }));
+  return new Promise((resolve, reject) => {
+    const person = persons.find(item => item.id === id);
+    if(person) {
+      setTimeout(() => resolve(person), 1000);
+    }
+    else {
+      reject(new Error("Chiiiiiiiii?"));
+    }
   });
 }
 
-// code here
-fetchPersonById(2).then(function(person) {
-  console.log(person);
-}); // E la console rispose: "{ id: 2, firstName: 'Maria', lastName: 'Verdi', age: 32 }" :-)
+fetchPersonById(5).then((person) => console.log(person));
