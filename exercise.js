@@ -1,8 +1,11 @@
-let numberStore = [0, 1, 2];
-let newNumber = 3;
+function sum(num1, num2, num3) {
+  return num1 + num2 + num3;
+}
+
+const numbers = [1, 2, 3];
+
 /*
-numberStore.push(newNumber);
+console.log(sum(numbers[0], numbers[1], numbers[2]));
 Altrimenti: */
 
-numberStore = [...numberStore, newNumber];
-console.log(numberStore);
+console.log(sum(...numbers));
