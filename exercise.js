@@ -46,7 +46,7 @@ function fetchPersonById(id) {
       }
 
       return reject(`Person with id: ${id} doesn't exist`);
-    }, 3000);
+    }, 1000);
   })
 }
 
@@ -61,7 +61,7 @@ function fetchJobById(id) {
       }
 
       return reject(`Job with id: ${id} doesn't exist`);
-    }, 1000);
+    }, 500);
   })
 }
 
@@ -69,6 +69,6 @@ function promises(id) { // Meglio avere un supervisore di chiamata ;-)
   return [fetchPersonById(id), fetchJobById(id)];
 }
 
-Promise.all(promises(2)).then(function(results) {
-  console.log(results);
+Promise.any(promises(2)).then(function(result) {
+  console.log(result);
 });
