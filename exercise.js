@@ -19,56 +19,35 @@ const persons = [
   }
 ];
 
-const jobs = [
-  {
-    id: 1,
-    jobTitle: 'CEO'
-  },
-  {
-    id: 2,
-    jobTitle: 'Project Manager'
-  },
-  {
-    id: 3,
-    jobTitle: 'Developer'
-  }
-];
-
-// core here
 function fetchPersonById(id) {
-  return new Promise(function(resolve, reject) {
-    setTimeout(function() {
-      const person = persons.find(function(item) {
-        return item.id === id
-      });
-      if(person) {
-        return resolve(person);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const person = persons.find(item => item.id === id);
+
+      if (person) {
+        return resolve(JSON.stringify(person));
       }
 
       return reject(`Person with id: ${id} doesn't exist`);
     }, 1000);
-  })
+  });
 }
 
-function fetchJobById(id) {
-  return new Promise(function(resolve, reject) {
-    setTimeout(function() {
-      const job = jobs.find(function(item) {
-        return item.id === id
-      });
-      if(job) {
-        return resolve(job);
-      }
-
-      return reject(`Job with id: ${id} doesn't exist`);
-    }, 500);
-  })
+/*
+fetchPersonById(2)
+  .then((personJson) => JSON.parse(personJson))
+  .then((person) => console.log(person))
+  .catch((err) => console.error(err));
+Altrimenti: */
+async function fetchPerson(id) {
+  try {
+    let personJson = await fetchPersonById(id);
+    let person = await JSON.parse(personJson);
+    console.log(person);
+  }
+  catch(err) {
+    console.error(err);
+  }
 }
 
-function promises(id) { // Meglio avere un supervisore di chiamata ;-)
-  return [fetchPersonById(id), fetchJobById(id)];
-}
-
-Promise.any(promises(2)).then(function(result) {
-  console.log(result);
-});
+fetchPerson(2);
