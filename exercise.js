@@ -33,21 +33,13 @@ function fetchPersonById(id) {
   });
 }
 
-/*
-fetchPersonById(2)
-  .then((personJson) => JSON.parse(personJson))
-  .then((person) => console.log(person))
-  .catch((err) => console.error(err));
-Altrimenti: */
-async function fetchPerson(id) {
+(async () => {
   try {
-    let personJson = await fetchPersonById(id);
-    let person = await JSON.parse(personJson);
+    const personJson = await fetchPersonById(4);
+    const person = await JSON.parse(personJson);
     console.log(person);
   }
-  catch(err) {
-    console.error(err);
+  catch(err) {          // In realtà blocco try-catch inserito anche in esercizio precedente poiché si riteneva necessario
+    console.error(err); // convertire sintatticamente anche il .catch(...) presente nella traccia
   }
-}
-
-fetchPerson(2);
+})();
