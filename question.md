@@ -1,2 +1,4 @@
-# Async Management - Exercise 7
-In questo esercizio è stato volutamente passato un id non valido alla funzione `fetchPersonById`. Implementare il codice necessario per gestire l'eccezione lanciata dalla `Promise`.
+# Browser Storing Data - Exercise 1
+Implementare il codice necessario per:
+* Recuperare il post presente al seguente url: https://jsonplaceholder.typicode.com/posts/1 al click del pulsante "Fetch Post"
+* Salvare il post sul localStorage al click del pulsante "Save Post on LocalStorage"
