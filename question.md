@@ -1,4 +1,4 @@
-# Browser Storing Data - Exercise 1
+# Browser Storing Data - Exercise 2
 Implementare il codice necessario per:
-* Recuperare il post presente al seguente url: https://jsonplaceholder.typicode.com/posts/1 al click del pulsante "Fetch Post"
-* Salvare il post sul localStorage al click del pulsante "Save Post on LocalStorage"
+* Recuperare il post presente all'interno del LocalStorage (salvato tramite l'esercizio precedente)
+* Visualizzare all'interno dell'elemento `#post-title` il titolo del post recuperato dal LocalStorage
