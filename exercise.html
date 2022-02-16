@@ -4,15 +4,15 @@
       <form>
         <div>
           <label>First Name:</label>
-          <input type="text" class="form-input" id="firstName" value="Mario" />
+          <input type="text" class="form-input" id="firstName" value="Mario"/>
         </div>
         <div>
           <label>Last Name:</label>
-          <input type="text" class="form-input" id="lastName" value="Rossi" />
+          <input type="text" class="form-input" id="lastName" value="Rossi"/>
         </div>
         <div>
           <label>Age:</label>
-          <input type="number" class="form-input" id="age" value="25" />
+          <input type="number" class="form-input" id="age" value="25"/>
         </div>
       </form>
     </div>
@@ -21,5 +21,9 @@
 
 <script>
   // code here
-  console.log(document.querySelector("div:first-child input.form-input").getAttribute("value"));
+  const lblPersons = document.querySelectorAll("form div label");
+  const txtPersons = document.querySelectorAll("form div input");
+  lblPersons.forEach(function(ele, index) {
+    console.log(`${ele.innerHTML} ${txtPersons[index].getAttribute("value")}`);
+  });
 </script>

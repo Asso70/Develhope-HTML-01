@@ -1,3 +1,8 @@
-# Dom Tree - Exercise 2
-Implementare il codice necessario per recuperare il contenuto del primo campo di testo e stamparlo in console.
-N.B: utilizzare la classe come selettore
+# Dom Tree - Exercise 3
+Implementare il codice necessario per recuperare il valore di ciascun campo di input e della corrispettiva label associata.
+In console occorrerà stampare il seguente risultato:
+```
+First Name: Mario
+Last Name: Rossi
+Age: 25
+```
