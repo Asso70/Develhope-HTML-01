@@ -1,3 +1,6 @@
-# Network Requests - Exercise 1
-Implementare il codice necessario per recuperare tramite una richiesta HTTP la lista dei todos presente al seguente url: https://jsonplaceholder.typicode.com/todos. Successivamente creare dinamicamente una lista di elementi (`<li>`) contenente il titolo del todo (proprietà `title` presente nella collezione di oggetti restituiti dalla response) e appenderla all'elemento `.todo-list`.
-N.B: il body della response contiene la lista dei todos in formato json, utilizzare il metodo `.json` presente nella response per eseguire la deserializzazione.
+# Network Requests - Exercise 2
+Implementare il codice necessario per recuperare tramite una richiesta HTTP il todo con id 4 tramite il seguente url: https://jsonplaceholder.typicode.com/todos/4. Successivamente creare due elementi:
+* Un elemento `<h2>` contenente il titolo del todo (proprietà `title`)
+* Un elemento `<input type="checkbox">` con la proprietà `checked` impostata al valore presente per la proprietà `completed` del todo
+
+Appendere all'interno del container i due elementi precedentemente creati.
