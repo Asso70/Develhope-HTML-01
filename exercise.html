@@ -43,6 +43,8 @@
     const psbSub = document.querySelector("form button");
     psbSub.setAttribute("type", "button");
     psbSub.addEventListener("click", submitPersonForm);
+    frmPerson.addEventListener("formdata", personFormLoaded);
+    new FormDataEvent("formdata", {formData: new FormData(frmPerson)});
   }
   function submitPersonForm() {
     const person = {};
@@ -51,6 +53,9 @@
       person[ele.getAttribute("id")] = ele.value;
     });
     console.log(person);
+  }
+  function personFormLoaded() {
+    console.log("Form has been loaded");
   }
   initForm();
 </script>
