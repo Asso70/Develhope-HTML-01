@@ -1,3 +1,7 @@
-# Dom Tree - Exercise 5
-Implementare il codice necessario per creare una tabella le cui righe sono generate dinamicamente.
-Al click del pulsante "Add Row" occorre richiamare la funzione `addRow`, la quale si occupa di creare dinamicamente un elemento `<tr>` contenente un campo di testo per ciascuna colonna: `firstName`, `lastName` e `age`. Appendere la riga generata al `<tbody>` della tabella.
+# Dom Tree - Exercise 6
+Implementare il codice necessario per generare dinamicamente il form `person-form`.
+Al caricamento della pagina occorre creare ed eseguire la funzione `initForm` che si occuperà di generare dinamicamente e aggiungere al form i campi: `firstName`, `lastName` e `age`.
+Al click del pulsante "Submit" del form richiamare il metodo `submitPersonForm`, il quale si dovrà occupare di:
+* Prevenire l'evento di default che avviene al submit del form
+* Creare un oggetto `person` contenente i valori del form popolato dall'utente
+* Eseguire il `console.log` dell'oggetto `person` creato

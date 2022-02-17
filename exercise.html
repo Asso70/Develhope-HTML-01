@@ -1,49 +1,56 @@
 <html>
   <body>
     <div id="container">
-      <h2>Person's List</h2>
-      <table id="person-table">
-        <tbody>
-
-        </tbody>
-      </table>
-      <button id="add-row">Add row</button>
+      <h2>Person's Form</h2>
+      <form id="person-form">
+        <button type="submit">Submit</button>
+      </form>
     </div>
   </body>
 </html>
 
 <script>
-  // code here
-  document.querySelector("button#add-row").addEventListener("click", addRow);
-  const tblPerson = document.querySelector("table#person-table");
-  const tbhPerson = document.createElement("thead");
-  const tbbPerson = document.querySelector("table#person-table tbody");
-  tblPerson.insertBefore(tbhPerson, tbbPerson);
-  const tbrPersons = [document.createElement("tr")];
-  tbhPerson.append(tbrPersons[0]);
-  const tbtPersons = [document.createElement("th")];
-  tbtPersons[0].innerHTML = "firstName";
-  tbrPersons[0].append(tbtPersons[0]);
-  tbtPersons.push(document.createElement("th"));
-  tbtPersons[1].innerHTML = "lastName";
-  tbrPersons[0].append(tbtPersons[1]);
-  tbtPersons.push(document.createElement("th"));
-  tbtPersons[2].innerHTML = "age";
-  tbrPersons[0].append(tbtPersons[2]);
-  let ind = 0;
-  const tbdPersons = [{}, {}, {}];
-  function addRow() {
-    tbrPersons.push(document.createElement("tr"));
-    ind = ind + 1;
-    tbbPerson.append(tbrPersons[ind]);
-    tbdPersons[0] = document.createElement("td");
-    tbdPersons[0].innerHTML = "Mario";
-    tbrPersons[ind].append(tbdPersons[0]);
-    tbdPersons[1] = document.createElement("td");
-    tbdPersons[1].innerHTML = `Rossi ${ind}`;
-    tbrPersons[ind].append(tbdPersons[1]);
-    tbdPersons[2] = document.createElement("td");
-    tbdPersons[2].innerHTML = 25;
-    tbrPersons[ind].append(tbdPersons[2]);
+  // Code here
+  function initForm() {
+    const frmPerson = document.querySelector("form#person-form");
+    const divFirstName = document.createElement("div");
+    frmPerson.append(divFirstName);
+    const lblFirstName = document.createElement("label");
+    lblFirstName.innerHTML = "First Name:"
+    divFirstName.append(lblFirstName);
+    const txtFirstName = document.createElement("input");
+    txtFirstName.setAttribute("type", "text");
+    txtFirstName.setAttribute("id", "firstName");
+    divFirstName.append(txtFirstName);
+    const divLastName = document.createElement("div");
+    frmPerson.append(divLastName);
+    const lblLastName = document.createElement("label");
+    lblLastName.innerHTML = "Last Name:"
+    divLastName.append(lblLastName);
+    const txtLastName = document.createElement("input");
+    txtLastName.setAttribute("type", "text");
+    txtLastName.setAttribute("id", "lastName");
+    divLastName.append(txtLastName);
+    const divAge = document.createElement("div");
+    frmPerson.append(divAge);
+    const lblAge = document.createElement("label");
+    lblAge.innerHTML = "Age:"
+    divAge.append(lblAge);
+    const txtAge = document.createElement("input");
+    txtAge.setAttribute("type", "number");
+    txtAge.setAttribute("id", "age");
+    divAge.append(txtAge);
+    const psbSub = document.querySelector("form button");
+    psbSub.setAttribute("type", "button");
+    psbSub.addEventListener("click", submitPersonForm);
   }
+  function submitPersonForm() {
+    const person = {};
+    const txtPersons = document.querySelectorAll("form div input");
+    txtPersons.forEach(function(ele) {
+      person[ele.getAttribute("id")] = ele.value;
+    });
+    console.log(person);
+  }
+  initForm();
 </script>
