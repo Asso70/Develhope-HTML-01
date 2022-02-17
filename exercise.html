@@ -1,31 +1,49 @@
 <html>
   <body>
     <div id="container">
-      <form>
-        <div>
-          <label>First Name:</label>
-          <input type="text" class="form-input" id="firstName" value="Mario"/>
-        </div>
-        <div>
-          <label>Last Name:</label>
-          <input type="text" class="form-input" id="lastName" value="Rossi"/>
-        </div>
-        <div>
-          <label>Age:</label>
-          <input type="number" class="form-input" id="age" value="25"/>
-        </div>
-      </form>
+      <h2>Person's List</h2>
+      <table id="person-table">
+        <tbody>
+
+        </tbody>
+      </table>
+      <button id="add-row">Add row</button>
     </div>
   </body>
 </html>
 
 <script>
   // code here
-  const person = {};
-  const txtPersons = document.querySelectorAll("form div input");
-  txtPersons.forEach(function(ele) {
-    person[ele.getAttribute("id")] = ele.getAttribute("value");
-  });
-  const frm = document.querySelector("form");
-  frm.setAttribute("data-person", JSON.stringify(person));
+  document.querySelector("button#add-row").addEventListener("click", addRow);
+  const tblPerson = document.querySelector("table#person-table");
+  const tbhPerson = document.createElement("thead");
+  const tbbPerson = document.querySelector("table#person-table tbody");
+  tblPerson.insertBefore(tbhPerson, tbbPerson);
+  const tbrPersons = [document.createElement("tr")];
+  tbhPerson.append(tbrPersons[0]);
+  const tbtPersons = [document.createElement("th")];
+  tbtPersons[0].innerHTML = "firstName";
+  tbrPersons[0].append(tbtPersons[0]);
+  tbtPersons.push(document.createElement("th"));
+  tbtPersons[1].innerHTML = "lastName";
+  tbrPersons[0].append(tbtPersons[1]);
+  tbtPersons.push(document.createElement("th"));
+  tbtPersons[2].innerHTML = "age";
+  tbrPersons[0].append(tbtPersons[2]);
+  let ind = 0;
+  const tbdPersons = [{}, {}, {}];
+  function addRow() {
+    tbrPersons.push(document.createElement("tr"));
+    ind = ind + 1;
+    tbbPerson.append(tbrPersons[ind]);
+    tbdPersons[0] = document.createElement("td");
+    tbdPersons[0].innerHTML = "Mario";
+    tbrPersons[ind].append(tbdPersons[0]);
+    tbdPersons[1] = document.createElement("td");
+    tbdPersons[1].innerHTML = `Rossi ${ind}`;
+    tbrPersons[ind].append(tbdPersons[1]);
+    tbdPersons[2] = document.createElement("td");
+    tbdPersons[2].innerHTML = 25;
+    tbrPersons[ind].append(tbdPersons[2]);
+  }
 </script>

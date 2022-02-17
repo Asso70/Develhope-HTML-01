@@ -1,2 +1,3 @@
-# Dom Tree - Exercise 4
-Implementare il codice necessario per recuperare il valore di ciascun campo di input e creare un oggetto `person` contenente le proprietà: `firstName`, `lastName` e `age`. Infine recuperare l'elemento `form` e aggiungere l'attributo `data-person` contenente l'oggetto `person` in formato json.
+# Dom Tree - Exercise 5
+Implementare il codice necessario per creare una tabella le cui righe sono generate dinamicamente.
+Al click del pulsante "Add Row" occorre richiamare la funzione `addRow`, la quale si occupa di creare dinamicamente un elemento `<tr>` contenente un campo di testo per ciascuna colonna: `firstName`, `lastName` e `age`. Appendere la riga generata al `<tbody>` della tabella.
