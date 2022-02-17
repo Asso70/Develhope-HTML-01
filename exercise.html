@@ -21,9 +21,11 @@
 
 <script>
   // code here
-  const lblPersons = document.querySelectorAll("form div label");
+  const person = {};
   const txtPersons = document.querySelectorAll("form div input");
-  lblPersons.forEach(function(ele, index) {
-    console.log(`${ele.innerHTML} ${txtPersons[index].getAttribute("value")}`);
+  txtPersons.forEach(function(ele) {
+    person[ele.getAttribute("id")] = ele.getAttribute("value");
   });
+  const frm = document.querySelector("form");
+  frm.setAttribute("data-person", JSON.stringify(person));
 </script>
