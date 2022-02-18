@@ -1,3 +1,2 @@
-# Dom Tree - Exercise 7
-Dal codice precedente creare l'evento custom `personFormLoaded` da dispatchare una volta eseguito l'init del form (`initForm`).
-Creare un listener per l'evento `personFormLoaded` che si occupa di stampare in console il messaggio "Person Form Loaded".
+# Dom Tree - Exercise 8
+Implementare il codice necessario per farsì che al passaggio del mouse sopra un elemento `.hero-list-item`, quest'ultimo venga evidenziato di rosso. Quando poi il mouse si sposta fuori dall'area dell'elemento, quest'ultimo deve ritornare ad avere il colore orginario (`transparent`)

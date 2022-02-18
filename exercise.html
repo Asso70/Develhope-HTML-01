@@ -1,61 +1,35 @@
 <html>
   <body>
     <div id="container">
-      <h2>Person's Form</h2>
-      <form id="person-form">
-        <button type="submit">Submit</button>
-      </form>
+      <h2>Hero's List</h2>
+      <ul class="hero-list">
+        <li class="hero-list-item">Batman</li>
+        <li class="hero-list-item">Superman</li>
+        <li class="hero-list-item">Spiderman</li>
+        <li class="hero-list-item">Hulk</li>
+        <li class="hero-list-item">Wolverine</li>
+      </ul>
     </div>
   </body>
 </html>
 
 <script>
-  // Code here
-  function initForm() {
-    const frmPerson = document.querySelector("form#person-form");
-    const divFirstName = document.createElement("div");
-    frmPerson.append(divFirstName);
-    const lblFirstName = document.createElement("label");
-    lblFirstName.innerHTML = "First Name:"
-    divFirstName.append(lblFirstName);
-    const txtFirstName = document.createElement("input");
-    txtFirstName.setAttribute("type", "text");
-    txtFirstName.setAttribute("id", "firstName");
-    divFirstName.append(txtFirstName);
-    const divLastName = document.createElement("div");
-    frmPerson.append(divLastName);
-    const lblLastName = document.createElement("label");
-    lblLastName.innerHTML = "Last Name:"
-    divLastName.append(lblLastName);
-    const txtLastName = document.createElement("input");
-    txtLastName.setAttribute("type", "text");
-    txtLastName.setAttribute("id", "lastName");
-    divLastName.append(txtLastName);
-    const divAge = document.createElement("div");
-    frmPerson.append(divAge);
-    const lblAge = document.createElement("label");
-    lblAge.innerHTML = "Age:"
-    divAge.append(lblAge);
-    const txtAge = document.createElement("input");
-    txtAge.setAttribute("type", "number");
-    txtAge.setAttribute("id", "age");
-    divAge.append(txtAge);
-    const psbSub = document.querySelector("form button");
-    psbSub.setAttribute("type", "button");
-    psbSub.addEventListener("click", submitPersonForm);
-    frmPerson.addEventListener("formdata", personFormLoaded);
-    new FormDataEvent("formdata", {formData: new FormData(frmPerson)});
+  // code here
+  document.querySelectorAll("li.hero-list-item").forEach(function(ele) {
+    const content = ele.innerHTML;
+    ele.innerHTML = null;
+    const spnHero = document.createElement("span");
+    spnHero.innerHTML = content;
+    ele.append(spnHero);
+    spnHero.addEventListener("pointerenter", highlight);
+    spnHero.addEventListener("pointerleave", highlight);
+  });
+  function highlight(event) {
+    if(event.type === "pointerenter") {
+      event.currentTarget.setAttribute("style", "background-color: red; color: white");
+    }
+    else if(event.type === "pointerleave") {
+      event.currentTarget.setAttribute("style", "background-color: transparent; color: unset");
+    }
   }
-  function submitPersonForm() {
-    const person = {};
-    const txtPersons = document.querySelectorAll("form div input");
-    txtPersons.forEach(function(ele) {
-      person[ele.getAttribute("id")] = ele.value;
-    });
-    console.log(person);
-  }
-  function personFormLoaded() {
-    console.log("Person Form Loaded");
-  }
-  initForm();
 </script>
