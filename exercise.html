@@ -1,35 +1,19 @@
 <html>
-  <body>
-    <div id="container">
-      <h2>Hero's List</h2>
-      <ul class="hero-list">
-        <li class="hero-list-item">Batman</li>
-        <li class="hero-list-item">Superman</li>
-        <li class="hero-list-item">Spiderman</li>
-        <li class="hero-list-item">Hulk</li>
-        <li class="hero-list-item">Wolverine</li>
-      </ul>
-    </div>
-  </body>
+  <head>
+    <meta charset="utf-8">
+    <meta class="" title="Test Tag Gatti">
+    <title>Test Tag Gatti</title>
+    <meta name="author" content="Stefano Assogna">
+    <meta name="description" content="Qui si taggano gatti">
+    <meta property="og:image" content="images/Develhope.jpg">
+    <meta property="og:description" content="Tagging di Gatti">
+    <link rel="shortcut icon" href="Develhope.ico" type="image/x-icon">
+</head>
+<body>
+  <h1>Tag di Gatti</h1>
+  <label for="cat-tag-select">Choose a pet:</label>
+  <select name="cat-tag" id="cat-tag-select">
+  </select>
+  <script src="exercise.js"></script>
+</body>
 </html>
-
-<script>
-  // code here
-  document.querySelectorAll("li.hero-list-item").forEach(function(ele) {
-    const content = ele.innerHTML;
-    ele.innerHTML = null;
-    const spnHero = document.createElement("span");
-    spnHero.innerHTML = content;
-    ele.append(spnHero);
-    spnHero.addEventListener("pointerenter", highlight);
-    spnHero.addEventListener("pointerleave", highlight);
-  });
-  function highlight(event) {
-    if(event.type === "pointerenter") {
-      event.currentTarget.setAttribute("style", "background-color: red; color: white");
-    }
-    else if(event.type === "pointerleave") {
-      event.currentTarget.setAttribute("style", "background-color: transparent; color: unset");
-    }
-  }
-</script>
