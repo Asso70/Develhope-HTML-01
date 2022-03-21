@@ -1,28 +1,28 @@
 interface Employee {
-  id: number,
-  name: string,
-  surname: string,
-  age: number,
-  dateOfBirth: Date,
-  address: Address,
-  role: Role,
-  username: string,
-  profilePhotoUrl: URL,
-  companies: Company[],
-  gender: Gender,
+  id: number;
+  name: string;
+  surname: string;
+  age: number;
+  dateOfBirth: Date;
+  address: Address;
+  role: Role;
+  username: string;
+  profilePhotoUrl: URL;
+  companies: Company[];
+  gender: Gender;
 }
 
 interface Address {
-  city: string,
-  street: string,
-  postalCode: string,
+  city: string;
+  street: string;
+  postalCode: string;
 }
 
 interface Company {
-  id: number,
-  name: string,
-  description: string,
-  location: Address,
+  id: number;
+  name: string;
+  description: string;
+  location: Address;
 }
 
 enum Role {STAFF, STUDENT, MANAGER, ADMIN}
