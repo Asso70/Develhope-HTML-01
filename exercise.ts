@@ -25,9 +25,17 @@ interface Company {
   location: Address;
 }
 
-enum Role {STAFF, STUDENT, MANAGER, ADMIN}
+enum Role {
+  STAFF = "Staff",
+  STUDENT = "Student",
+  MANAGER = "Manager",
+  ADMIN = "Administrator",
+}
 
-enum Gender {MALE, FEMALE} // OTHER mi rifiuto!
+enum Gender {
+  MALE = "Male",
+  FEMALE = "Female",
+} // OTHER mi rifiuto!
 
 const obj: Employee = {id: 3487, name: "Mario", surname: "Rossi",  age: 30, dateOfBirth: new Date("1955/12/14"), address: {city: "Rome", street: "Via Roma 10", postalCode: "0010"},
                       role: Role.STAFF, username: "MarioRossi80", profilePhotoUrl: new URL("https://bit.ly/3yRngEP"), companies: [{id: 148979, name: "Develhope",
