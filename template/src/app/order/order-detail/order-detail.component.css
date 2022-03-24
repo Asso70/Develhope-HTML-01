@@ -1,0 +1,6 @@
+.order-detail {
+  border: 1px solid rgb(35, 68, 93);
+  background-color: rgb(205, 235, 139);
+  min-width: 20vw;
+  min-height: 8vh;
+}

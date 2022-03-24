@@ -1,0 +1,6 @@
+.user-detail {
+  border: 1px solid rgb(214, 182, 86);
+  background-color: rgb(255, 242, 204);
+  min-width: 20vw;
+  min-height: 70vh;
+}
