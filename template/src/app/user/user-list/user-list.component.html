@@ -1,0 +1,15 @@
+<div *ngFor="let user of users">
+  <p>ID: {{user.id}}</p>
+  <p>Name: {{user.name}}</p>
+  <p>Surame: {{user.surname}}</p>
+  <p>Age: {{user.age}}</p>
+  <p>Date of birth: {{user.dateOfBirth | date: "dd MMM yyyy"}}</p>
+  <p>City: {{user.address.city}}</p>
+  <p>Street: {{user.address.street}}</p>
+  <p>PO box: {{user.address.postalCode}}</p>
+  <p>Role: {{user.role}}</p>
+  <p>User name: {{user.username}}</p>
+  <img [src]="user.profilePhotoUrl" alt="" width="330" height="220">
+  <p>Gender: {{user.gender}}</p>
+  <hr>
+</div>
