@@ -1,3 +1,3 @@
-# Angular Exercise 4
+# Angular Exercise 5
 
-Partendo dall'esercizio precedente, creare un componente user-single, che verrà iterato nella lista e prenderà come `@Input()` un singolo elemento della lista
+Partendo dall'esercizio precedente, nel componente users-single aggiungere un button che permette di rimuovere quell'elemento dalla lista emettendo un evento al componente padre.

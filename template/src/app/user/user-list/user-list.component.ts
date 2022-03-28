@@ -57,9 +57,12 @@ export class UserListComponent implements OnInit {
       gender: Gender.FEMALE
     }
 ];
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  deleteUser(user: IUser) {
+    console.log(this.users.indexOf(user));
+    this.users.splice(this.users.indexOf(user), 1);
   }
-
 }

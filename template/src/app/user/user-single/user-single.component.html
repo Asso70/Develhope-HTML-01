@@ -1,3 +1,4 @@
 <span>
   <img [src]="user.profilePhotoUrl" alt="" width="330" height="220"> <b>{{user.name}} {{user.surname}}</b> {{user.age}} {{user.address.city}}
+  <button (click)="deleteUser(user)">Delete</button>
 </span>
