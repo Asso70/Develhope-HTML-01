@@ -1,0 +1,11 @@
+.staff {
+  border: 4px solid rgb(69, 71, 112);
+}
+
+.manager {
+  border: 4px solid rgb(166, 177, 222);
+}
+
+.administrator {
+  border: 4px solid rgb(205, 209, 212);
+}
