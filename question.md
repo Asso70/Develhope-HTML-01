@@ -1,3 +1,3 @@
-# Angular Exercise 5
+# Angular Exercise 6
 
-Partendo dall'esercizio precedente, nel componente users-single aggiungere un button che permette di rimuovere quell'elemento dalla lista emettendo un evento al componente padre.
+Partendo dall'esercizio precedente, Aggiungere un controllo sulla lista utenti, se la lista è popolata mostrarla, altrimenti mostrare un messaggio "Non sono presenti utenti"

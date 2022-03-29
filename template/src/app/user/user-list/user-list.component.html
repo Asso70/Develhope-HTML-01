@@ -1,5 +1,9 @@
-<ol>
+<ol *ngIf="users.length > 0; else noUsers">
   <li *ngFor="let user of users">
     <app-user-single [user]="user" (deleted)="deleteUser($event)"></app-user-single>
   </li>
 </ol>
+
+<ng-template #noUsers>
+  <p>Non sono presenti utenti</p>
+</ng-template>
