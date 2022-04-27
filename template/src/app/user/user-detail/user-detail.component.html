@@ -1,4 +1,6 @@
-<div class="user-detail">
-  <h5 class="m-4 text-center">user-detail.component</h5>
+<p>{{user.id}} {{show}}</p>
+<div class="user-detail" *ngIf="show">
+  <h5 class="m-4 text-center">user-detail.component {{user.id}}</h5>
+  <button (click)="closeUser()" class="btn btn-primary btn-sm">Chiudi</button>
   <div class="m-4"></div>
 </div>

@@ -1,14 +1,8 @@
 <div class="user-list">
   <h5 class="text-center">user-list.component</h5>
   <div class="d-grid gap-3 m-2">
-    <div>
-      <app-user-single></app-user-single>
-    </div>
-    <div>
-      <app-user-single></app-user-single>
-    </div>
-    <div>
-      <app-user-single></app-user-single>
+    <div *ngFor="let user of users">
+      <app-user-single [user]="user" (selectedUser)="selectUser($event)" (show)="setHidden($event)"></app-user-single>
     </div>
   </div>
 </div>

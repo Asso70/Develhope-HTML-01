@@ -1,8 +1,6 @@
 .user-container {
   border: 1px solid rgb(108, 142, 191);
   background-color: rgb(218, 232, 252);
-  min-width: 45vw;
-  min-height: 80vh;
 }
 
 .space-btw {

@@ -1,3 +1,4 @@
 <div class="user-single">
-  <h5 class="text-center">user-single.component</h5>
+  <h5 class="text-center">user-single.component {{user.id}}</h5>
+  <button [disabled]="user.id === 0" (click)="selectUser(user)" class="btn btn-primary btn-sm">Vai allo user</button>
 </div>

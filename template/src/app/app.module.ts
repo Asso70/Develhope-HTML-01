@@ -11,6 +11,8 @@ import { OrderListComponent } from './order/order-list/order-list.component';
 import { OrderSingleComponent } from './order/order-single/order-single.component';
 import { OrderDetailComponent } from './order/order-detail/order-detail.component';
 import { UserSingleComponent } from './user/user-single/user-single.component';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import { NotFoundComponent } from './error/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { UserSingleComponent } from './user/user-single/user-single.component';
     OrderSingleComponent,
     OrderDetailComponent,
     UserSingleComponent,
+    NavbarComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

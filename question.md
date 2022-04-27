@@ -1,9 +1,13 @@
-# Angular - Exercise 1
+Replicare la struttura dell'esercizio 1 di Angular, con le seguenti modifiche:
 
-Replicare la seguente struttura su angular
 
-Extra: Replicare anche il layout oltre la struttura
+- Realizzare una navbar che abbia due bottoni, 'Utenti' e 'Order' che permettano la navigazione tra il componente users e il componente orders
+- I componenti `container` adesso occuperanno il 100% della pagina
+- In user-single aggiungere un bottone che permetta la visualizzazione del componente user-detail
+- In user detail aggiungere un bottone che permetta la chiusura del componente
+N.B. La comunicazione tra i componenti deve avvenire ESCLUSIVAMENTE tramite Input e Output
 
-*Consiglio: Per risolvere gli esercizi su Angular, creare un progetto vuoto attraverso la CLI, e creare un un branch a partire da master per ogni esercizio.*
+# Angular - Exercise 8.2
 
-![struttura-esercizio-1](D:\Lavori\Develhope\Tutor\Esercizi\angular\3. Angular esercizio 1\struttura-esercizio-1.png)
+- Fare in modo che al caricamento del progetto venga visualizzato il componente `user-container`
+- Fare in modo che  nel caso venga digitato un path non corretto nella barrra degli indirizzi, venga visualizzato un nuovo componente `not-found` che mostri un messaggio di errore

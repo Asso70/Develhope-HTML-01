@@ -1,7 +1,7 @@
 <div class="mx-3 user-container">
   <h5 class="text-center">user-container.component</h5>
   <div class="d-flex m-4 space-btw">
-    <app-user-list></app-user-list>
-    <app-user-detail></app-user-detail>
+    <app-user-list [users]="users" (selectedUser)="setSelectedUser($event)" (show)="setHidden($event)"></app-user-list>
+    <app-user-detail [user]="selectedUser" [show]="show" (hide)="setHidden($event)"></app-user-detail>
   </div>
 </div>
