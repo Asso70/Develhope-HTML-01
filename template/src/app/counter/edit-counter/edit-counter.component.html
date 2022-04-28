@@ -1,0 +1,3 @@
+<input type="number" name="num" placeholder="Operando" ngModel #numField="ngModel">
+<button (click)="sum(numField.value)" class="btn btn-primary btn-sm">Aggiungi {{numField.value}}</button>
+<button (click)="subtract(numField.value)" class="btn btn-primary btn-sm">Sottrai {{numField.value}}</button>
