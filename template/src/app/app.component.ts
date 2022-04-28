@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'template';
+  counter: number = 0;
+  error: boolean = false;
+
+  setCounter(counter: number): void {
+    this.counter = counter;
+  }
+
+  setError(error: boolean): void {
+    this.error = error;
+  }
 }
