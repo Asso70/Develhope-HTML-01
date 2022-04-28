@@ -16,12 +16,13 @@ export class CounterService {
     console.log(this.counter);
   }
 
-  subtract(num: number = 1): void {
+  subtract(num: number = 1): boolean {
     if(num > this.counter) {
       console.log("Errore: Non è possibile sottrarre più del disponibile");
-      return;
+      return true;
     }
     this.counter = this.counter - num;
     console.log(this.counter);
+    return false;
   }
 }
