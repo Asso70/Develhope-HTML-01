@@ -1,28 +1,27 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CounterService {
-  private counter: number = 0;
+  private counterSubject: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  public counter$: Observable<number> = this.counterSubject.asObservable();
+  
   constructor() { }
 
-  getCounter(): number {
-    return this.counter;
+  get(): Observable<number> {
+    return this.counter$;
   }
 
   sum(num: number = 1): void {
-    this.counter = this.counter + num;
-    console.log(this.counter);
+    this.counterSubject.next(this.counterSubject.value + num);
   }
 
-  subtract(num: number = 1): boolean {
-    if(num > this.counter) {
-      console.log("Errore: Non è possibile sottrarre più del disponibile");
-      return true;
+  subtract(num: number = 1): void {
+    if(num > this.counterSubject.value) {
+      throw new Error("Errore: Non è possibile sottrarre più del disponibile");
     }
-    this.counter = this.counter - num;
-    console.log(this.counter);
-    return false;
+    this.counterSubject.next(this.counterSubject.value - num);
   }
 }

@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, Type } from '@angular/core';
+import { catchError, Observable, Observer, Subscription } from 'rxjs';
 import { CounterService } from 'src/app/service/counter.service';
 
 @Component({
@@ -9,10 +10,16 @@ import { CounterService } from 'src/app/service/counter.service';
 export class EditCounterComponent implements OnInit {
   @Output() modCounter: EventEmitter<number> = new EventEmitter<number>();
   @Output() chkError: EventEmitter<boolean> = new EventEmitter<boolean>();
-
-  constructor(private counterServ: CounterService) { }
+  
+  constructor(private counterService: CounterService) { }
 
   ngOnInit(): void {
+    this.counterService.get().subscribe({
+      next: (data: number): void => { //EEEEVVIVA LE FRECEEEEEEEEEEE!!!!!
+        this.modCounter.emit(data);
+        this.chkError.emit(false);
+      }
+    });
   }
 
   sum(num: number): void {
@@ -20,13 +27,15 @@ export class EditCounterComponent implements OnInit {
       this.subtract(-1 * num);
       return;
     }
-    this.counterServ.sum(num);
-    this.modCounter.emit(this.counterServ.getCounter());
-    this.chkError.emit(false);
+    this.counterService.sum(num);
   }
 
   subtract(num: number): void {
-    this.chkError.emit(this.counterServ.subtract(num));
-    this.modCounter.emit(this.counterServ.getCounter());
+    try {
+      this.counterService.subtract(num);
+    }
+    catch(error) {
+      this.chkError.emit(true);
+    }
   }
 }
