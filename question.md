@@ -9,7 +9,7 @@ N.B. Con gli observable usare solo operatori RXJS
 
 interface Beer {   
     id: number, 
-    type: "small | medium", 
+    type: "small | medium",
     name: string, 
     price: number 
 }

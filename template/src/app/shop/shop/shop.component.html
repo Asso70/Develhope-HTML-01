@@ -1,0 +1,17 @@
+<form #f="ngForm" (ngSubmit)="submitBeerForm(f)">
+  <label for="beer-name-select">Nome birra:</label>
+  <select class="form-select" name="beerNames" id="beer-name-select" multiple required ngModel>
+    <option *ngFor="let name of beerNames" [value]="name">{{name}}</option>
+  </select>
+  <label for="beer-type-select">Tipo di birra:</label>
+  <select name="beerTypes" id="beer-type-select" multiple required ngModel>
+    <option *ngFor="let type of beerTypes" [value]="type">{{type}}</option>
+  </select>
+  <button type="submit" [disabled]="f.invalid">Search</button>
+</form>
+<hr>
+<div class="card-body" *ngFor="let selBeer of selectedBeers">
+  <p><b>Name: </b>{{selBeer.name}}</p>
+  <p><b>Type: </b>{{selBeer.type}}</p>
+  <p><b>Price (€): </b>{{selBeer.price | currency: "EUR" : ""}}</p>
+</div>

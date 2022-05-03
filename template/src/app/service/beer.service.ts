@@ -11,67 +11,61 @@ export class BeerService {
       id: 1,
       type: "SMALL",
       name: "Ichnusa non filtrata",
-      price: 1.59
+      price: 1.19
     },
     {
       id: 2,
       type: "MEDIUM",
-      name: "Poretti non filtrata",
-      price: 1.29,
+      name: "Ichnusa non filtrata",
+      price: 1.59
     },
     {
       id: 3,
+      type: "SMALL",
+      name: "Poretti 3 Luppoli non filtrata",
+      price: 0.80,
+    },
+    {
+      id: 4,
+      type: "MEDIUM",
+      name: "Poretti 3 Luppoli non filtrata",
+      price: 1.29,
+    },
+    {
+      id: 5,
       type: "SMALL",
       name: "Peroni cruda",
       price: 1.50,
     },
     {
-      id: 4,
+      id: 6,
       type: "MEDIUM",
       name: "Moretti",
       price: 1.10,
     },
-    {
-      id: 5,
-      type: "MEDIUM",
-      name: "Carlsberg",
-      price: 0.98,
-    },
-    {
-      id: 5,
+     {
+      id: 7,
       type: "SMALL",
       name: "Messina ai cristalli di sale",
-      price: 1.70,
+      price: 1.19,
     },
     {
-      id: 6,
-      type: "SMALL",
-      name: "Menabrea",
-      price: 1.20,
+      id: 8,
+      type: "MEDIUM",
+      name: "Messina ai cristalli di sale",
+      price: 1.59,
     },
     {
-      id: 7,
+      id: 9,
       type: "MEDIUM",
       name: "Ichnusa",
       price: 0.90,
     },
     {
-      id: 8,
+      id: 10,
       type: "MEDIUM",
       name: "Nastro Azzurro",
       price: 0.99,
-    },
-    {
-      id: 9,
-      type: "MEDIUM",
-      name: "Heineken",
-      price: 1.10,
-    },
-    {
-      id: 10,
-      type: "MEDIUM",
-      name: "Tuborg",
-      price: 0.95,
     },
   ];
   private beers$: Observable<IBeer> = from(this.beers);
@@ -82,9 +76,9 @@ export class BeerService {
     return this.beers$;
   }
 
-  getBeer(id: number): Observable<IBeer|undefined> {
+  getBeer(id: number): Observable<IBeer> {
     return of(this.beers.find(function(item: IBeer): boolean {
       return item.id === id;
-    }));
+    })!);
   }
 }
