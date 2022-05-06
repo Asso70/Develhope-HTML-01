@@ -1,0 +1,12 @@
+div.container {
+  background-color: rgb(132, 239, 125);
+  border-radius: 20px;
+}
+
+.container h4 {
+  margin-left: 10%;
+}
+
+div.btn-separator {
+  width: 2%;
+}

@@ -1,0 +1,9 @@
+<div class="container">
+  <h4>Joke piaciuti</h4>
+  <div *ngFor="let joke of jokes">
+    <app-single-joke [joke]="joke"></app-single-joke>
+    <div class="d-flex justify-content-center p-2">
+      <app-dislike-button></app-dislike-button>
+    </div>
+  </div>
+</div>

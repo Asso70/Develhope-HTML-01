@@ -1,0 +1,11 @@
+.container {
+  border-radius: 20px;
+}
+
+.container h4 {
+  margin-left: 10%;
+}
+
+div.btn-separator {
+  width: 2%;
+}
