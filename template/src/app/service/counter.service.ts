@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, throwError } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class CounterService {
 
   subtract(num: number = 1): void {
     if(num > this.counterSubject.value) {
-      throw new Error("Errore: Non è possibile sottrarre più del disponibile");
+      console.error('Errore: Non è possibile sottrarre più del disponibile');
     }
     this.counterSubject.next(this.counterSubject.value - num);
   }

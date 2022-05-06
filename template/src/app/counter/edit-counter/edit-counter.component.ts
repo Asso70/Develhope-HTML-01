@@ -1,6 +1,5 @@
-import { Component, EventEmitter, OnInit, Output, Type } from '@angular/core';
-import { catchError, Observable, Observer, Subscription } from 'rxjs';
-import { CounterService } from 'src/app/service/counter.service';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-edit-counter',
@@ -8,34 +7,12 @@ import { CounterService } from 'src/app/service/counter.service';
   styleUrls: ['./edit-counter.component.css']
 })
 export class EditCounterComponent implements OnInit {
-  @Output() modCounter: EventEmitter<number> = new EventEmitter<number>();
-  @Output() chkError: EventEmitter<boolean> = new EventEmitter<boolean>();
-  
-  constructor(private counterService: CounterService) { }
+  @Output() addCounter: EventEmitter<number> = new EventEmitter<number>();
+  @Output() substractCounter: EventEmitter<number> = new EventEmitter<number>();
 
-  ngOnInit(): void {
-    this.counterService.get().subscribe({
-      next: (data: number): void => { //EEEEVVIVA LE FRECEEEEEEEEEEE!!!!!
-        this.modCounter.emit(data);
-        this.chkError.emit(false);
-      }
-    });
-  }
+  public editInput = this.fb.control(1);
 
-  sum(num: number): void {
-    if(num < 0) {
-      this.subtract(-1 * num);
-      return;
-    }
-    this.counterService.sum(num);
-  }
+  constructor(private fb: FormBuilder) {}
 
-  subtract(num: number): void {
-    try {
-      this.counterService.subtract(num);
-    }
-    catch(error) {
-      this.chkError.emit(true);
-    }
-  }
+  ngOnInit(): void {}
 }

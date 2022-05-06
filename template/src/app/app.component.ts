@@ -1,20 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CounterService } from './service/counter.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'template';
   counter: number = 0;
-  error: boolean = false;
 
-  setCounter(counter: number): void {
-    this.counter = counter;
+  constructor(private counterService: CounterService) {}
+
+  ngOnInit(): void {
+    this.counterService.get().subscribe((counter) => (this.counter = counter));
   }
 
-  setError(error: boolean): void {
-    this.error = error;
+  add(counter: number): void {
+    this.counterService.sum(counter);
+  }
+
+  substract(counter: number): void {
+    this.counterService.subtract(counter);
   }
 }

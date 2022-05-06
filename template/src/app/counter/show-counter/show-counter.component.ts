@@ -6,8 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./show-counter.component.css']
 })
 export class ShowCounterComponent implements OnInit {
-  @Input() counter: number = 0;
-  @Input() error: boolean = false;
+  @Input() counter!: number;
+
   constructor() { }
 
   ngOnInit(): void {
