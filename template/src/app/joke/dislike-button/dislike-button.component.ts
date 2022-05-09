@@ -9,7 +9,6 @@ import { JokeService } from 'src/app/service/joke.service';
 })
 export class DislikeButtonComponent implements OnInit {
   @Input() joke!: IJoke;
-  @Input() remove: boolean = false;
 
   constructor(private jokeService: JokeService) { }
 
@@ -17,9 +16,7 @@ export class DislikeButtonComponent implements OnInit {
   }
 
   addDislikedJoke(): void {
-    if(this.remove) {
-      this.jokeService.removeLikedJoke(this.joke);
-    }
+    this.jokeService.removeLikedJoke(this.joke);
     this.jokeService.addDislikedJoke(this.joke);
   }
 }

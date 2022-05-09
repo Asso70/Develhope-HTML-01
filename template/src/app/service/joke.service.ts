@@ -18,7 +18,7 @@ export class JokeService {
 
   startJokes(): Observable<IJoke> {
     return interval(5000).pipe(concatMap<number, Observable<IJoke>>((num: number): Observable<IJoke> => {
-      return this.httpClient.get<IJoke>("https://v2.jokeapi.dev/joke/any", {responseType: "json"});
+      return this.httpClient.get<IJoke>("https://v2.jokeapi.dev/joke/Any", {responseType: "json"});
     })
   )}
 

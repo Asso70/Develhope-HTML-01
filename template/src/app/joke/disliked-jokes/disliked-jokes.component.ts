@@ -8,7 +8,6 @@ import { JokeService } from 'src/app/service/joke.service';
   styleUrls: ['./disliked-jokes.component.css']
 })
 export class DislikedJokesComponent implements OnInit {
-
   jokes: IJoke[] = [];
 
   constructor(private jokeService: JokeService) { }
