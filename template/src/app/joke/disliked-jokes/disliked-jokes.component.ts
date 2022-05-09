@@ -3,17 +3,18 @@ import { IJoke } from 'src/app/model/Joke';
 import { JokeService } from 'src/app/service/joke.service';
 
 @Component({
-  selector: 'app-liked-jokes',
-  templateUrl: './liked-jokes.component.html',
-  styleUrls: ['./liked-jokes.component.css']
+  selector: 'app-disliked-jokes',
+  templateUrl: './disliked-jokes.component.html',
+  styleUrls: ['./disliked-jokes.component.css']
 })
-export class LikedJokesComponent implements OnInit {
+export class DislikedJokesComponent implements OnInit {
+
   jokes: IJoke[] = [];
 
   constructor(private jokeService: JokeService) { }
 
   ngOnInit(): void {
-    this.jokeService.getLikedJokes().subscribe({
+    this.jokeService.getDislikedJokes().subscribe({
       next: (data: IJoke[]) => this.jokes = data,
      });
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IJoke } from 'src/app/model/Joke';
+import { JokeService } from 'src/app/service/joke.service';
 
 @Component({
   selector: 'app-joke-container',
@@ -8,10 +9,13 @@ import { IJoke } from 'src/app/model/Joke';
 })
 export class JokeContainerComponent implements OnInit {
   likedJokes: IJoke[] = [];
+  dislikedJokes: IJoke[] = [];
 
-  constructor() { }
+  constructor(private jokeService: JokeService) { }
 
   ngOnInit(): void {
+    this.jokeService.getLikedJokes().subscribe({
+      next: (data: IJoke[]) => this.likedJokes = data,
+    });
   }
-
 }

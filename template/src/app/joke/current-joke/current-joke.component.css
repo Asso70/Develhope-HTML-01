@@ -1,9 +1,18 @@
 .container {
   border-radius: 20px;
+  height: 20%;
 }
 
 .container h4 {
   margin-left: 10%;
+}
+
+.filler {
+  width: 4%;
+}
+
+.joke-text {
+  width: 90%;
 }
 
 div.btn-separator {

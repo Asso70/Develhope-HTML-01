@@ -10,6 +10,7 @@ import { DislikeButtonComponent } from './joke/dislike-button/dislike-button.com
 import { LikedJokesComponent } from './joke/liked-jokes/liked-jokes.component';
 import { SingleJokeComponent } from './joke/single-joke/single-joke.component';
 import { JokeContainerComponent } from './joke/joke-container/joke-container.component';
+import { DislikedJokesComponent } from './joke/disliked-jokes/disliked-jokes.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { JokeContainerComponent } from './joke/joke-container/joke-container.com
     DislikeButtonComponent,
     LikedJokesComponent,
     SingleJokeComponent,
-    JokeContainerComponent
+    JokeContainerComponent,
+    DislikedJokesComponent
   ],
   imports: [
     BrowserModule,

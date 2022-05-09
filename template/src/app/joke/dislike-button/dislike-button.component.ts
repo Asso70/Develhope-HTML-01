@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IJoke } from 'src/app/model/Joke';
+import { JokeService } from 'src/app/service/joke.service';
 
 @Component({
   selector: 'app-dislike-button',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dislike-button.component.css']
 })
 export class DislikeButtonComponent implements OnInit {
+  @Input() joke!: IJoke;
+  @Input() remove: boolean = false;
 
-  constructor() { }
+  constructor(private jokeService: JokeService) { }
 
   ngOnInit(): void {
   }
 
+  addDislikedJoke(): void {
+    if(this.remove) {
+      this.jokeService.removeLikedJoke(this.joke);
+    }
+    this.jokeService.addDislikedJoke(this.joke);
+  }
 }

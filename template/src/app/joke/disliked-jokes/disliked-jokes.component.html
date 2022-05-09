@@ -1,5 +1,5 @@
 <div class="container overflow-auto">
-  <h4>Joke piaciuti</h4>
+  <h4>Joke non piaciuti</h4>
   <div *ngFor="let joke of jokes; let i = index">
     <div class="d-inline-flex overflow-visible joke-item">
       <div class="joke-counter d-flex text-center justify-content-center rounded-circle bg-white border-0">{{i + 1}}</div>
@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="d-flex justify-content-center p-2">
-      <app-dislike-button [joke]="joke" [remove]="true"></app-dislike-button>
+      <app-like-button [joke]="joke" [remove]="true"></app-like-button>
     </div>
     <hr *ngIf="i < jokes.length - 1">
   </div>

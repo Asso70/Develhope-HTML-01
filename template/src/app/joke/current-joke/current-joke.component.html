@@ -1,9 +1,14 @@
 <div class="container bg-white">
   <h4>Joke attuale</h4>
-  <app-single-joke [joke]="joke"></app-single-joke>
+  <div class="d-inline-flex">
+    <div class="filler"></div>
+    <div class="joke-text">
+      <app-single-joke [joke]="joke"></app-single-joke>
+    </div>
+  </div>
   <div class="d-flex justify-content-center p-2">
-    <app-like-button></app-like-button>
+    <app-like-button [joke]="joke"></app-like-button>
     <div class="btn-separator"></div>
-    <app-dislike-button></app-dislike-button>
+    <app-dislike-button [joke]="joke"></app-dislike-button>
   </div>
 </div>

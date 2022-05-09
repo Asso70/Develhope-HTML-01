@@ -1,5 +1,5 @@
-<div class="joke">
-  <div *ngIf="joke.joke">{{joke.joke}}</div>
-  <div *ngIf="joke.setup">{{joke.setup}}</div>
-  <div *ngIf="joke.delivery">{{joke.delivery}}</div>
+<div class="joke" *ngIf="joke">
+  <div *ngIf="joke.joke" class="text-wrap">{{joke.joke}}</div>
+  <div *ngIf="joke.setup" class="text-wrap">{{joke.setup}}</div>
+  <div *ngIf="joke.delivery" class="text-wrap">{{joke.delivery}}</div>
 </div>

@@ -1,1 +1,1 @@
-<button type="button" class="btn btn-danger rounded-pill">Dislike</button>
+<button type="button" class="btn btn-danger rounded-pill" [disabled]="!joke" (click)="addDislikedJoke()">Dislike</button>
