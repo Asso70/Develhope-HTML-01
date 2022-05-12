@@ -16,6 +16,7 @@ export class DislikeButtonComponent implements OnInit {
   }
 
   addDislikedJoke(): void {
+    console.log(this.joke);
     this.jokeService.removeLikedJoke(this.joke);
     this.jokeService.addDislikedJoke(this.joke);
   }

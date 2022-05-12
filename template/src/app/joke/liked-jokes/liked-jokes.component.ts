@@ -15,6 +15,6 @@ export class LikedJokesComponent implements OnInit {
   ngOnInit(): void {
     this.jokeService.getLikedJokes().subscribe({
       next: (data: IJoke[]) => this.jokes = data,
-     });
+    });
   }
 }

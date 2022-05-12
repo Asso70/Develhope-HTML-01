@@ -28,7 +28,6 @@ export class JokeService {
     }
     this.likedJokes.push(joke);
     this.likedJokeSubject.next(this.likedJokes.slice());
-    console.log(this.likedJokes);
   }
 
   getLikedJokes(): Observable<IJoke[]> {
@@ -36,7 +35,10 @@ export class JokeService {
   }
 
   removeLikedJoke(joke: IJoke): void {
-    this.likedJokes.splice(this.likedJokes.findIndex((ele: IJoke) => ele.id === joke.id), 1);
+    const i: number = this.likedJokes.findIndex((ele: IJoke) => ele.id === joke.id);
+    if(i >= 0) {
+      this.likedJokes.splice(i, 1);
+    }
     this.likedJokeSubject.next(this.likedJokes.slice());
   }
 
@@ -46,7 +48,6 @@ export class JokeService {
     }
     this.dislikedJokes.push(joke);
     this.dislikedJokeSubject.next(this.dislikedJokes.slice());
-    console.log(this.dislikedJokes);
   }
 
   getDislikedJokes(): Observable<IJoke[]> {
@@ -54,7 +55,10 @@ export class JokeService {
   }
 
   removeDislikedJoke(joke: IJoke): void {
-    this.dislikedJokes.splice(this.dislikedJokes.findIndex((ele: IJoke) => ele.id === joke.id), 1);
+    const i: number = this.dislikedJokes.findIndex((ele: IJoke) => ele.id === joke.id);
+    if(i >= 0) {
+      this.dislikedJokes.splice(i, 1);
+    }
     this.dislikedJokeSubject.next(this.dislikedJokes.slice());
   }
 }

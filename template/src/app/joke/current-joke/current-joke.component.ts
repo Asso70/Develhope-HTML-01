@@ -18,7 +18,6 @@ export class CurrentJokeComponent implements OnInit {
     this.jokeService.startJokes().subscribe({
       next: (joke: IJoke): void => {
         this.joke = joke;
-        console.log(this.joke);
       },
     });
   }
