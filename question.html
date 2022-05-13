@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test-Classe5</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><h1 id="test-web-angular-classe-5">Test Web Angular Classe 5</h1>
+<p>Realizzare un’applicazione Angular che permetta di recuperare, attraverso <strong>una chiamata di rete</strong>, delle attività.<br>
+È possibile richiedere un’attività inviando alcuni <strong>parametri query</strong>, come <em>tipo, partecipanti e prezzo</em>, che saranno <strong>inseriti</strong> dall’utente.</p>
+<p>Una volta richiesta l’attività, qualora venisse restituito un errore, mostrare un messaggio (anche un console.log), invece, se è presente, si verrà <strong>reindirizzati</strong> alla lista di tutte le attività richieste.</p>
+<hr>
+<p>Qui verrà mostrata una tabella che mostrerà, per ogni attività, il <strong>nome, il tipo, il prezzo e un bottone per i dettagli</strong></p>
+<p>Il prezzo verrà modificato seguendo questa logica:</p>
+<ul>
+<li>se sarà uguale a 0, verrà mostrata la stringa: <strong>gratis</strong></li>
+<li>se sarà maggiore di 0 ma minore o uguale a 0.5, verrà mostrata la stringa: <strong>basso</strong></li>
+<li>se sarà maggiore di 0.5 ma minore di 1, verrà mostrata la stringa: <strong>medio</strong></li>
+<li>se sarà uguale a 1, verrà mostrata la stringa: <strong>alto</strong></li>
+</ul>
+<p>Se non è presente nessuna attività nella lista mostrare il messaggio <strong>Non sono presenti attività</strong></p>
+<p>In fondo verrà mostrato un bottone che riporterà alla <strong>pagina di richiesta attività</strong></p>
+<hr>
+<p>Se dalla lista delle attività si clicca sul bottone per visualizzare i dettagli, verremo <strong>reindirizzati</strong> alla pagina di dettaglio della attività.<br>
+In questa pagina sarà presente una <strong>card</strong> che mostra, nell’intestazione, il nome dell’attività.<br>
+Mentre nel body sarà presente un’immagine <strong>relativa al tipo di attività</strong>, i partecipanti, il prezzo e l’accessibilità.</p>
+<p>In fondo sarà presente un bottone che riporterà alla <strong>pagina di lista attività</strong><br>
+Se si ri-aggiornasse questa pagina bisogna mostrare l’attività precedentemente recuperata attraverso la sua <code>key</code></p>
+<p>Documentazione API: <a href="https://www.boredapi.com/documentation">https://www.boredapi.com/documentation</a><br>
+Design: <a href="https://www.figma.com/file/13Hg3R0GOY6VuI2CQOiLtN/Angular-Test-classe-5?node-id=0%3A1">https://www.figma.com/file/13Hg3R0GOY6VuI2CQOiLtN/Angular-Test-classe-5?node-id=0%3A1</a></p>
+<hr>
+<h2 id="extra">Extra:</h2>
+<p>Evitare di effettuare chiamate eccessive, quindi sia nella lista che nel dettaglio, se l’attività è stata recuperata utilizzare quella</p>
+<hr>
+<hr>
+<p>Per chi non riuscisse a fare le chiamate, replicare comunque tutto il layout e il routing e nella lista di attività ciclare questo risposta mocked:</p>
+<pre><code>[
+    {
+	    accessibility:  0,
+	    activity:  "Memorize the fifty states and their capitals",
+	    key:  "4179309",
+	    link:  "",
+	    participants:  1,
+	    price:  0,
+	    type:  "education"
+    },
+    {
+	    accessibility:  0.3,
+	    activity:  "Play a game of Monopoly",
+	    key:  "1408058",
+	    link:  "",
+	    participants:  4,
+	    price:  0.2,
+	    type:  "social"
+    }
+]
+</code></pre>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,12 @@
+<h1>Activity</h1>
+<form #f="ngForm" (ngSubmit)="submit(f)" class="row g-3">
+<div class="col-md-4">
+  <label for="type" class="form-label">Type</label>
+    <select class="form-select" name="type" required ngModel #typeField="ngModel">
+      <option *ngFor="let type of selTypes" [value]="type.id">{{type.id}}</option>
+    </select>
+  </div>
+  <div class="col-12">
+    <button type="submit" [disabled]="f.invalid" class="w-100 btn btn-primary btn-lg">Crea</button>
+  </div>
+</form>
