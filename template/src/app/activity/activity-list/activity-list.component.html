@@ -1,0 +1,16 @@
+<h1>Lista delle attività</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-6"><b>Nome</b></div>
+    <div class="col"><b>Tipo</b></div>
+    <div class="col text-end"><b>Prezzo</b></div>
+    <div class="col"></div>
+  </div>
+  <div *ngFor="let activity of activities" class="row border border-1">
+    <div class="col-6">{{activity.activity}}</div>
+    <div class="col">{{activity.type | typeDescr}}</div>
+    <div class="col text-end">{{activity.price | priceLevel}}</div>
+    <button type="button" class="col btn btn-primary" (click)="getActivityByKey(activity.key)">Dettagli</button>
+  </div>
+  <button type="button" class="col btn btn-secondary" [routerLink]="'/activity'">Richiedi un'attività</button>
+</div>
