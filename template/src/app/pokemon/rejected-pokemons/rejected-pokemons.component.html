@@ -1,0 +1,20 @@
+<div class="container w-100 h-100 d-flex flex-column">
+  <h4 class="text-center w-100 p-2">Pokemòn rifiutati: {{rejectedPokemons.length}}</h4>
+  <div class="list d-flex flex-column flex-grow-1 overflow-auto">
+    <div *ngFor="let pokemon of rejectedPokemons" class="item flex-shrink-0">
+      <div class="data d-flex">
+        <img *ngIf="pokemon.sprites.other.dream_world.front_default" src="{{pokemon.sprites.other.dream_world.front_default}}" alt="" class="svg">
+        <img *ngIf="!pokemon.sprites.other.dream_world.front_default" src="{{pokemon.sprites.front_default}}" alt="" class="png">
+        <span class="d-flex align-items-center"># {{pokemon.id}} {{pokemon.name | titlecase}}</span>
+        <div class="d-flex flex-row-reverse flex-grow-1 flex-wrap align-items-center">
+          <div *ngFor="let type of pokemon.types" class="d-flex flex-row">
+            <div class="poke-type rounded-pill d-flex flex-row align-items-center p-2" [ngClass]="'poke-type-' + type.type.name">
+              {{type | translateTypeName | async | uppercase}}</div>
+            <div class="poke-type-filler"></div>
+          </div>
+        </div>
+      </div>
+      <div class="item-filler"></div>
+    </div>
+  </div>
+</div>

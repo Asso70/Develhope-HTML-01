@@ -1,0 +1,22 @@
+div.background {
+  background-image: url(../../../assets/Pokemon-Seaside-Landscape.png);
+}
+
+app-rejected-pokemons {
+  width: 25vw;
+  height: 70vh;
+}
+
+div.filler-rejected, div.filler-captured {
+  width: 2%;
+}
+
+app-current-pokemon {
+  width: 40vw;
+  height: 70vh;
+}
+
+app-captured-pokemons {
+  width: 8vw;
+  height: 70vh;
+}

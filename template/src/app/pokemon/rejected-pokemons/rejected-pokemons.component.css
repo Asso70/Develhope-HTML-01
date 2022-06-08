@@ -1,0 +1,117 @@
+div.container {
+  padding: 0;
+  background: rgb(220, 53, 69);
+  border-radius: 5%;
+}
+
+div.list {
+  height: 85%;
+}
+
+div.item {
+  height: 20%;
+}
+
+div.data {
+  height: 75%;
+  background: rgb(166, 207, 253);
+  cursor: pointer;
+}
+
+div.item-filler {
+  height: 25%;
+}
+
+div.poke-type {
+  height: 2em;
+  font-size: 0.6em;
+}
+
+div.poke-type-filler {
+  width: 0.2em;
+}
+
+div.poke-type-normal {
+  background-color: rgba(240, 233, 233, 0.932)
+}
+
+div.poke-type-fighting {
+  background-color: red;
+}
+
+div.poke-type-flying {
+  background: linear-gradient(to bottom, cyan, white);
+}
+
+div.poke-type-poison {
+  background-color: purple;
+  color: yellow;
+}
+
+div.poke-type-ground {
+  background-color: rgba(165, 42, 42, 0.596);
+}
+
+div.poke-type-rock {
+  background: linear-gradient(to right, grey, rgba(59, 59, 59, 0.904), grey, rgba(59, 59, 59, 0.904), grey, rgba(59, 59, 59, 0.904));
+  color: white;
+}
+
+div.poke-type-bug {
+  background-color: rgba(37, 10, 10, 0.87);
+  color: grey;
+}
+
+div.poke-type-ghost {
+  background-color: ghostwhite;
+}
+
+div.poke-type-steel {
+  background-color: silver;
+}
+
+div.poke-type-fire {
+  background: linear-gradient(to bottom, yellow, red);
+}
+
+div.poke-type-water {
+  background-color: rgb(0, 132, 255);
+}
+
+div.poke-type-grass {
+  background-color: rgb(63, 114, 5);
+}
+
+div.poke-type-electric {
+  background-color: rgb(245, 252, 145);
+}
+
+div.poke-type-psychic {
+  background-color: rgb(214, 57, 130);
+}
+
+div.poke-type-ice {
+  background-color: lightblue;
+  color: white;
+}
+
+div.poke-type-dragon {
+  background: linear-gradient(to bottom, rgb(255, 102, 0) 50%, rgb(92, 142, 184) 50%);
+}
+
+div.poke-type-dark {
+  background-color: black;
+  color: rgb(102, 101, 101);
+}
+
+div.poke-type-fairy {
+  background-color: lightpink;
+}
+
+div.poke-type-unknown {
+  color: aliceblue;
+}
+
+div.poke-type-shadow {
+  background-color: darkslategray;
+}

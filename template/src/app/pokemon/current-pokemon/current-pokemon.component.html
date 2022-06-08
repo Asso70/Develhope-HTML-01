@@ -1,0 +1,27 @@
+<div *ngIf="pokemon.id >= 1" class="container w-100 h-100 d-flex flex-column">
+  <div class="header d-inline-flex justify-content-end align-items-end">
+    <div id="name">{{pokemon.name | titlecase}}</div>
+  </div>
+  <div class="data-body d-inline-flex justify-content-between">
+    <div id="detail" class="d-flex flex-column">
+      <div class="text-center w-100">Dettagli</div>
+      <div class="data p-2">
+        <div>ID: {{pokemon.id}}</div>
+        <div>Weight: {{pokemon.weight}}</div>
+        <div>Height: {{pokemon.height}}</div>
+      </div>
+    </div>
+    <div id="img">
+      <img *ngIf="pokemon.sprites.other.dream_world.front_default" src="{{pokemon.sprites.other.dream_world.front_default}}" alt="" class="svg">
+      <img *ngIf="!pokemon.sprites.other.dream_world.front_default" src="{{pokemon.sprites.front_default}}" alt="" class="png">
+    </div>
+  </div>
+  <div class="body-filler"></div>
+  <div class="action-body d-inline-flex justify-content-center">
+    <button type="button" class="btn btn-danger rounded-pill" (click)="rejectPokemon()">Rifiuta</button>
+    <div class="action-filler"></div>
+    <button type="button" [disabled]="capturedPokemonsLength >= 6" class="btn btn-success rounded-pill" (click)="capturePokemon()">Cattura</button>
+  </div>
+  <div class="footer-filler"></div>
+  <div class="footer text-white p-3">È apparso un {{pokemon.name | titlecase}} {{pokemon.id | tameStatus}}!</div>
+</div>

@@ -1,0 +1,10 @@
+<div class="container w-100 h-100 d-flex flex-column">
+  <div *ngFor="let pokemon of capturedPokemons" class="item">
+    <div class="data d-flex flex-column align-items-center h-100" [routerLink]="['/pokemon/detail/' + pokemon.id]">
+      <img *ngIf="pokemon.sprites.other.dream_world.front_default" src="{{pokemon.sprites.other.dream_world.front_default}}" alt="" class="svg">
+      <img *ngIf="!pokemon.sprites.other.dream_world.front_default" src="{{pokemon.sprites.front_default}}" alt="" class="png">
+      <div class="text-light">{{pokemon.name | titlecase}}</div>
+    </div>
+  </div>
+  <div *ngFor="let filler of fillers" class="item flex-grow-1"></div>
+</div>
