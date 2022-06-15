@@ -1,3 +1,152 @@
 div.background {
   background-image: url(../../../assets/Pokemon-Valley-Landscape.png);
 }
+
+div.container {
+  width: 90%;
+  height: 90%;
+  border-radius: 2em;
+}
+
+div.container.tame-status-addomesticato {
+  background-color: var(--tamed-bk-color);
+}
+
+div.container.tame-status-selvatico {
+  background-color: var(--wild-bk-color);
+}
+
+div.poke-type-normal {
+  background-color: var(--type-normal-bk-color);
+}
+
+div.poke-type-fighting {
+  background-color: var(--type-fighting-bk-color);
+}
+
+div.poke-type-flying {
+  background: var(--type-flying-bk-color);
+}
+
+div.poke-type-poison {
+  background-color: var(--type-poison-bk-color);
+  color: var(--type-poison-color);
+}
+
+div.poke-type-ground {
+  background-color: var(--type-ground-bk-color);
+}
+
+div.poke-type-rock {
+  background: var(--type-rock-bk-color);
+  color: var(--type-rock-color);
+}
+
+div.poke-type-bug {
+  background-color: var(--type-bug-bk-color);
+  color: var(--type-bug-color);
+}
+
+div.poke-type-ghost {
+  background-color: var(--type-ghost-bk-color);
+}
+
+div.poke-type-steel {
+  background-color: var(--type-steel-bk-color);
+}
+
+div.poke-type-fire {
+  background: var(--type-fire-bk-color);
+}
+
+div.poke-type-water {
+  background-color: var(--type-water-bk-color);
+}
+
+div.poke-type-grass {
+  background-color: var(--type-grass-bk-color);
+}
+
+div.poke-type-electric {
+  background-color: var(--type-electric-bk-color);
+}
+
+div.poke-type-psychic {
+  background-color: var(--type-psychic-bk-color);
+}
+
+div.poke-type-ice {
+  background-color: var(--type-ice-bk-color);
+  color: var(--type-ice-color);
+}
+
+div.poke-type-dragon {
+  background: var(--type-dragon-bk-color);
+}
+
+div.poke-type-dark {
+  background-color: var(--type-dark-bk-color);
+  color: var(--type-dark-color);
+}
+
+div.poke-type-fairy {
+  background-color: var(--type-fairy-bk-color);
+}
+
+div.poke-type-unknown {
+  color: var(--type-unknown-color);
+}
+
+div.poke-type-shadow {
+  background-color: var(--type-shadow-bk-color);
+}
+
+div.body {
+  padding: 2%;
+}
+
+div#pokemon {
+  width: 40%;
+}
+
+div#img {
+  width: 100%;
+  height: 60%;
+}
+
+img.svg {
+  width: 100%;
+  height: 100%;
+}
+
+img.png {
+  width: 30%;
+  height: 40%;
+}
+
+div#poke-types {
+  width: 70%;
+  height: 40%;
+}
+
+div.poke-types {
+  width: 48%;
+  height: 20%;
+  border-radius: 0.8em;
+}
+
+div.data {
+  width: 28%;
+  height: 90%;
+}
+
+div.data div.list {
+  background-color: var(--data-bk-color);
+  border-radius: 2em;
+  height: 65%;
+}
+
+div.data div.item {
+  height: 18%;
+  min-height: 16%;
+}

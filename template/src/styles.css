@@ -1,4 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --data-bk-color: rgb(241, 255, 157);
+  --tamed-bk-color: rgb(118, 151, 255);
+  --wild-bk-color: rgb(129, 177, 96);
+  --type-normal-bk-color: rgba(240, 233, 233, 0.932);
+  --type-fighting-bk-color: red;
+  --type-flying-bk-color: linear-gradient(to bottom, cyan, white);
+  --type-poison-bk-color: purple;
+  --type-poison-color: yellow;
+  --type-ground-bk-color: rgba(165, 42, 42, 0.596);
+  --type-rock-bk-color: linear-gradient(to right, grey, rgba(59, 59, 59, 0.904), grey, rgba(59, 59, 59, 0.904), grey, rgba(59, 59, 59, 0.904));
+  --type-rock-color: white;
+  --type-bug-bk-color: rgba(37, 10, 10, 0.87);
+  --type-bug-color: grey;
+  --type-ghost-bk-color: ghostwhite;
+  --type-steel-bk-color: silver;
+  --type-fire-bk-color: linear-gradient(to bottom, yellow, red);
+  --type-water-bk-color: rgb(0, 132, 255);
+  --type-grass-bk-color: rgb(63, 114, 5);
+  --type-electric-bk-color: rgb(245, 252, 145);
+  --type-psychic-bk-color: rgb(214, 57, 130);
+  --type-ice-bk-color: lightblue;
+  --type-ice-color: white;
+  --type-dragon-bk-color: linear-gradient(to bottom, rgb(255, 102, 0) 50%, rgb(92, 142, 184) 50%);
+  --type-dark-bk-color: black;
+  --type-dark-color: rgb(102, 101, 101);
+  --type-fairy-bk-color: lightpink;
+  --type-unknown-color: aliceblue;
+  --type-shadow-bk-color: darkslategray;
+}
+
 div, p, button {
   font-family: 'Preahvihear', sans-serif;
 }

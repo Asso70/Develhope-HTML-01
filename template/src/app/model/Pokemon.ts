@@ -4,15 +4,11 @@ export interface IPokemon {
   weight: number;
   height: number;
   stats: [{
-    stat: {
-      name: string;
-    };
     base_stat: number;
+    stat: INamedAPIResource;
   }];
   moves: [{
-    move: {
-      name: string;
-    };
+    move: INamedAPIResource;
   }];
   sprites: {
     front_default: string;
@@ -22,25 +18,25 @@ export interface IPokemon {
       };
     };
   };
-  types: IPokeType[];
+  types: [{
+    type: INamedAPIResource;
+  }];
 }
 
-export interface IPokeType {
-  type: {
-    name: string;
-    url: string;
-  }
-}
-
-export interface IType {
-  names: ITranslation[];
+export interface INamedAPIResource {
+  name: string;
+  url: string;
 }
 
 export interface ITranslation {
+  names: IName[];
+}
+
+export interface IName {
   name: string;
   language: {
     name: string;
-  }
+  };
 }
 
 export class Pokemon implements IPokemon {
@@ -49,14 +45,16 @@ export class Pokemon implements IPokemon {
   weight!: number;
   height!: number;
   stats!: [{
+    base_stat: number;
     stat: {
       name: string;
+      url: string;
     };
-    base_stat: number;
   }];
   moves!: [{
     move: {
       name: string;
+      url: string;
     };
   }];
   sprites!: {
@@ -67,5 +65,7 @@ export class Pokemon implements IPokemon {
       };
     };
   };
-  types!: IPokeType[];
+  types!: [{
+    type: INamedAPIResource;
+  }];
 }

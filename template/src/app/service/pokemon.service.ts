@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, concatMap, Observable, of, Subject } from 'rxjs';
-import { IPokemon, IPokeType, ITranslation, IType, Pokemon } from '../model/Pokemon';
+import { BehaviorSubject, concatMap, Observable, of } from 'rxjs';
+import { IName, INamedAPIResource, IPokemon, ITranslation, Pokemon } from '../model/Pokemon';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -9,18 +9,18 @@ import { HttpClient } from '@angular/common/http';
 export class PokemonService {
   private randomPokemonSubject: BehaviorSubject<IPokemon> = new BehaviorSubject<IPokemon>(new Pokemon());
   randomPokemon$: Observable<IPokemon> = this.randomPokemonSubject.asObservable();
-  private capturedPokemonsSubject: Subject<IPokemon[]> = new Subject<IPokemon[]>();
+  private capturedPokemonsSubject: BehaviorSubject<IPokemon[]> = new BehaviorSubject<IPokemon[]>([]);
   capturedPokemons$: Observable<IPokemon[]> = this.capturedPokemonsSubject.asObservable();
   private capturedPokemons: IPokemon[] = [];
-  private rejectedPokemonsSubject: Subject<IPokemon[]> = new Subject<IPokemon[]>();
+  private rejectedPokemonsSubject: BehaviorSubject<IPokemon[]> = new BehaviorSubject<IPokemon[]>([]);
   rejectedPokemons$: Observable<IPokemon[]> = this.rejectedPokemonsSubject.asObservable();
   private rejectedPokemons: IPokemon[] = [];
   private fillers: boolean[] = new Array<boolean>(6);
   private fillerSubject: BehaviorSubject<boolean[]> = new BehaviorSubject<boolean[]>(this.fillers);
   fillers$: Observable<boolean[]> = this.fillerSubject.asObservable();
   private MIN_POKEMON_ID: number = 1;
-//  private MAX_POKEMON_ID: number = 898;
-  private MAX_POKEMON_ID: number = 2;
+  private MAX_POKEMON_ID: number = 898;
+//  private MAX_POKEMON_ID: number = 2;
   private detailPokemonSubject: BehaviorSubject<IPokemon> = new BehaviorSubject<IPokemon>(new Pokemon());
   detailPokemon$: Observable<IPokemon> = this.detailPokemonSubject.asObservable();
   private lastPokemon: IPokemon = new Pokemon();
@@ -101,13 +101,16 @@ export class PokemonService {
     return "selvatico";
   }
 
-  getTranslatedTypeName(pokeType: IPokeType): Observable<string> {
-    return this.httpClient.get<IType>(pokeType.type.url, {responseType: "json"}).pipe(concatMap<IType, Observable<string>>((type: IType): Observable<string> => {
-      let i: number = type.names.findIndex((ele: ITranslation) => ele.language.name === "it");
-      if(i >= 0) return of(type.names[i].name);
-      i = type.names.findIndex((ele: ITranslation) => ele.language.name === "en");
-      if(i >= 0) return of(type.names[i].name);
-      return of(pokeType.type.name);
+  getTranslatedName(namedResource: INamedAPIResource, priorityLangs: string[]): Observable<string> {
+    return this.httpClient.get<ITranslation>(namedResource.url,
+                                              {responseType: "json"}).pipe(concatMap<ITranslation, Observable<string>>((translation: ITranslation): Observable<string> => {
+      let i = -1;
+      for(const lang of priorityLangs) {
+        i = translation.names.findIndex((ele: IName) => ele.language.name === lang);
+        if(i >= 0) break;
+      }
+      if(i >= 0) return of(translation.names[i].name);
+      return of(namedResource.name);
     }));
   }
 

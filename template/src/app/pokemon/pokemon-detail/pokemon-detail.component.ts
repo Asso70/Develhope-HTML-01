@@ -10,6 +10,7 @@ import { PokemonService } from 'src/app/service/pokemon.service';
 })
 export class PokemonDetailComponent implements OnInit {
   pokemon!: IPokemon;
+  tameStatus!: string;
 
   constructor(private activatedRoute: ActivatedRoute, private pokemonService: PokemonService) { }
 
@@ -18,7 +19,10 @@ export class PokemonDetailComponent implements OnInit {
       next: ({id}) => this.pokemonService.getPokemonById(id),
     });
     this.pokemonService.getDetailPokemon().subscribe({
-      next: (data: IPokemon) => this.pokemon = data,
+      next: (data: IPokemon) => {
+        this.pokemon = data;
+        this.tameStatus = this.pokemonService.getTameStatusById(data.id);
+      },
     });
   }
 }

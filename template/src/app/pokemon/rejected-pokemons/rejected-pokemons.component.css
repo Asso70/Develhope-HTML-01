@@ -1,6 +1,6 @@
 div.container {
   padding: 0;
-  background: rgb(220, 53, 69);
+  background-color: var(--wild-bk-color);
   border-radius: 5%;
 }
 
@@ -32,86 +32,86 @@ div.poke-type-filler {
 }
 
 div.poke-type-normal {
-  background-color: rgba(240, 233, 233, 0.932)
+  background-color: var(--type-normal-bk-color);
 }
 
 div.poke-type-fighting {
-  background-color: red;
+  background-color: var(--type-fighting-bk-color);
 }
 
 div.poke-type-flying {
-  background: linear-gradient(to bottom, cyan, white);
+  background: var(--type-flying-bk-color);
 }
 
 div.poke-type-poison {
-  background-color: purple;
-  color: yellow;
+  background-color: var(--type-poison-bk-color);
+  color: var(--type-poison-color);
 }
 
 div.poke-type-ground {
-  background-color: rgba(165, 42, 42, 0.596);
+  background-color: var(--type-ground-bk-color);
 }
 
 div.poke-type-rock {
-  background: linear-gradient(to right, grey, rgba(59, 59, 59, 0.904), grey, rgba(59, 59, 59, 0.904), grey, rgba(59, 59, 59, 0.904));
-  color: white;
+  background: var(--type-rock-bk-color);
+  color: var(--type-rock-color);
 }
 
 div.poke-type-bug {
-  background-color: rgba(37, 10, 10, 0.87);
-  color: grey;
+  background-color: var(--type-bug-bk-color);
+  color: var(--type-bug-color);
 }
 
 div.poke-type-ghost {
-  background-color: ghostwhite;
+  background-color: var(--type-ghost-bk-color);
 }
 
 div.poke-type-steel {
-  background-color: silver;
+  background-color: var(--type-steel-bk-color);
 }
 
 div.poke-type-fire {
-  background: linear-gradient(to bottom, yellow, red);
+  background: var(--type-fire-bk-color);
 }
 
 div.poke-type-water {
-  background-color: rgb(0, 132, 255);
+  background-color: var(--type-water-bk-color);
 }
 
 div.poke-type-grass {
-  background-color: rgb(63, 114, 5);
+  background-color: var(--type-grass-bk-color);
 }
 
 div.poke-type-electric {
-  background-color: rgb(245, 252, 145);
+  background-color: var(--type-electric-bk-color);
 }
 
 div.poke-type-psychic {
-  background-color: rgb(214, 57, 130);
+  background-color: var(--type-psychic-bk-color);
 }
 
 div.poke-type-ice {
-  background-color: lightblue;
-  color: white;
+  background-color: var(--type-ice-bk-color);
+  color: var(--type-ice-color);
 }
 
 div.poke-type-dragon {
-  background: linear-gradient(to bottom, rgb(255, 102, 0) 50%, rgb(92, 142, 184) 50%);
+  background: var(--type-dragon-bk-color);
 }
 
 div.poke-type-dark {
-  background-color: black;
-  color: rgb(102, 101, 101);
+  background-color: var(--type-dark-bk-color);
+  color: var(--type-dark-color);
 }
 
 div.poke-type-fairy {
-  background-color: lightpink;
+  background-color: var(--type-fairy-bk-color);
 }
 
 div.poke-type-unknown {
-  color: aliceblue;
+  color: var(--type-unknown-color);
 }
 
 div.poke-type-shadow {
-  background-color: darkslategray;
+  background-color: var(--type-shadow-bk-color);
 }

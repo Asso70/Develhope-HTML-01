@@ -1,6 +1,6 @@
 div.container {
   padding: 0;
-  background: linear-gradient(45deg, rgb(220, 53, 69), rgb(25, 135, 84));
+  background: linear-gradient(45deg, var(--wild-bk-color), var(--tamed-bk-color));
   border-radius: 5%;
 }
 
@@ -27,7 +27,7 @@ div.data-body {
 div#detail {
   width: 30%;
   height: 40%;
-  background-color: rgb(241, 255, 157);
+  background-color: var(--data-bk-color);
   border-radius: 15%;
 }
 

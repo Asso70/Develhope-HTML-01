@@ -1,6 +1,6 @@
 div.container {
   padding: 0;
-  background: rgb(25, 135, 84);
+  background-color: var(--tamed-bk-color);
   border-radius: 2em;
   border: 1px solid black;
 }
