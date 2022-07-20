@@ -1,8 +1,28 @@
 {
   "devDependencies": {
+    "jest": "^28.1.3",
+    "supertest": "^6.2.4",
     "typescript": "^4.7.4"
   },
   "dependencies": {
     "figlet": "^1.5.2"
-  }
+  },
+  "name": "develhope_esercitazione",
+  "description": "Develhope HTML Class\r - 👋 Hi, I’m @Asso70\r - 👀 I’m interested in learning\r - 🌱 I’m currently learning web programming\r - 💞️ I’m looking to collaborate on my company's projects\r - 📫 How to reach me: I'm on Slack with my name similar to this nick ;-)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Asso70/Develhope_Esercitazione.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Asso70/Develhope_Esercitazione/issues"
+  },
+  "homepage": "https://github.com/Asso70/Develhope_Esercitazione#readme"
 }
