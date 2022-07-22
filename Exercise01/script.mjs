@@ -1,5 +1,5 @@
 import { writeFile } from 'node:fs';
 
-writeFile("textfile.txt", "Hello World!", (err) => {
+writeFile("./Exercise01/textfile.txt", "Hello World!", (err) => {
   if(err) throw err;
 });
