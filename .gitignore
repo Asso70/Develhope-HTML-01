@@ -1,5 +1,11 @@
 # Node
 /node_modules
 
+# dotenv environment variable files
+.env
+
+# Distrubution
+/dist
+
 # Didactics
 /didactics
