@@ -1,11 +1,26 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
+}
+
+model employee {
+  id            Int               @id @default(autoincrement())
+  name          String            @db.VarChar(255)
+  lastName      String            @db.VarChar(255)
+  category      employee_category @default(TECHNICIAN)
+  salary        Int               @default(1500)
+  hiredOn       DateTime          @default(now())
+  photoFilename String?           @db.VarChar(255)
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime?
+}
+
+enum employee_category {
+  TECHNICIAN
+  ACCOUNTANT
+  MANAGER
 }
