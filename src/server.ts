@@ -1,6 +1,7 @@
 import express from "express";
 import "express-async-errors";
 import "dotenv/config";
+import cors from "cors";
 import {PrismaClient} from "@prisma/client";
 import addFormats from "ajv-formats";
 import {Validator, ValidationError} from "express-json-validator-middleware";
@@ -21,6 +22,12 @@ addFormats(validator.ajv, ["date-time"])
 const validate = validator.validate;
 
 app.use(express.json());
+
+const corsOptions = {
+  origin: "http://localhost:8080",
+};
+
+app.use(cors(corsOptions));
 
 app.get("/employees", async (request, response) => {
   const employees = await prisma.employee.findMany();

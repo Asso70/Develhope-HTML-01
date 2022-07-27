@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+  <body>
+    <script>
+      async function fetchEmployees() {
+        const response = await fetch("http://localhost:3000/employees");
+        const employees = await response.json();
+        console.log({employees});
+      }
+      fetchEmployees();
+    </script>
+  </body>
+</html>
