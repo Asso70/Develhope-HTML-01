@@ -16,7 +16,9 @@ model employee {
   hiredOn       DateTime          @default(now())
   photoFilename String?           @db.VarChar(255)
   createdAt     DateTime          @default(now())
+  createdBy     String            @db.VarChar(255)
   updatedAt     DateTime?
+  updatedBy     String?           @db.VarChar(255)
 }
 
 enum employee_category {

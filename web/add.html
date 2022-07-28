@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+  <body>
+    <p><a href="http://localhost:3000/auth/login?redirectTo=http://localhost:8080/add">Login</a></p>
+    <form action="http://localhost:3000/employees" id="form-add">
+      <label>
+        <strong>Name:</strong>
+        <input type="text" name="name">
+      </label>
+
+      <label>
+        <strong>Last name:</strong>
+        <input type="text" name="lastName">
+      </label>
+
+      <label for="category-select">Category:</label>
+      <select name="category" id="category-select">
+        <option value="TECHNICIAN" selected>Technician</option>
+        <option value="ACCOUNTANT">Accountant</option>
+        <option value="MANAGER">Hamster</option>
+      </select>
+
+      <label>
+        <strong>Salary:</strong>
+        <input type="number" name="salary" value="1500">
+      </label>
+
+      <input type="submit" value="Add employee">
+    </form>
+
+    <script>
+      async function addEmployee(event) {
+        event.preventDefault();
+
+        const form = event.currentTarget;
+
+        const formData = new FormData(form);
+        const plainFormData = Object.fromEntries(formData.entries());
+        const formDataJsonString = JSON.stringify(plainFormData);
+
+        const url = form.action;
+
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: formDataJsonString,
+          credentials: "include"
+        });
+
+        const employee = await response.json();
+
+        console.dir(employee);
+      }
+
+      const addForm = document.getElementById("form-add");
+
+      addForm.addEventListener("submit", addEmployee);
+    </script>
+  </body>
+</html>

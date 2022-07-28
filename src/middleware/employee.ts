@@ -17,7 +17,8 @@ export const employeeCreSchema = Type.Object({
   salary: Type.Optional(Type.Integer()),
   hiredOn: Type.Optional(Type.String({ format: "date-time" })),
   photoFilename: Type.Optional(Type.String()),
-}, {additionalProperties: false});
+  createdBy: Type.Optional(Type.String())
+  }, {additionalProperties: false});
 
 export type EmployeeCreData = Static<typeof employeeCreSchema>;
 
@@ -28,7 +29,8 @@ export const employeeUpdSchema = Type.Object({
   salary: Type.Optional(Type.Integer()),
   hiredOn: Type.Optional(Type.String({ format: "date-time" })),
   photoFilename: Type.Optional(Type.String()),
-  updatedAt: Type.String({ format: "date-time" })
+  updatedAt: Type.Optional(Type.String({ format: "date-time" })),
+  updatedBy: Type.Optional(Type.String())
 }, {additionalProperties: false});
 
 export type EmployeeUpdData = Static<typeof employeeUpdSchema>;
