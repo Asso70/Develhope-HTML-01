@@ -1,4 +1,8 @@
 import {Static, Type} from "@sinclair/typebox";
+import {PrismaClient} from "@prisma/client";
+import addFormats from "ajv-formats";
+import {Validator, ValidationError} from "express-json-validator-middleware";
+import {ErrorRequestHandler} from "express";
 
 enum Category {
   TECHNICIAN = "TECHNICIAN",
@@ -28,3 +32,24 @@ export const employeeUpdSchema = Type.Object({
 }, {additionalProperties: false});
 
 export type EmployeeUpdData = Static<typeof employeeUpdSchema>;
+
+const prisma = new PrismaClient();
+
+const validator: Validator = new Validator({
+  coerceTypes: true
+});
+addFormats(validator.ajv, ["date-time"])
+  .addKeyword("kind")
+  .addKeyword("modifier");
+
+export const validationErrorMiddleware: ErrorRequestHandler = (error, request, response, next) => {
+  if(error instanceof ValidationError) {
+    response.status(422).send({
+      errors: error.validationErrors
+    });
+    next();
+  }
+  else next(error);
+};
+
+export const validate = validator.validate;

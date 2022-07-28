@@ -1,5 +1,9 @@
-# Handle file uploads
+# Refactor your application
 
-In this exercise you'll build on what you created in Exercise: Add support for CORS to your API'.
+In this exercise you'll build on what you created in 'Exercise: Handle file uploads'.
 
-Create an HTML form that can upload a file, and add a route to your API that accepts that file and saves it to disk.
+Refactor your API application so that:
+
+* Application configuration is accessed via one module (config.ts).
+* The routes are in their own module and imported into app.ts.
+* All middleware are organised under a middleware directory, and imported where they're needed.
