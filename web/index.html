@@ -1,12 +1,8 @@
 <!DOCTYPE html>
   <body>
-    <script>
-      async function fetchEmployees() {
-        const response = await fetch("http://localhost:3000/employees");
-        const employees = await response.json();
-        console.log({employees});
-      }
-      fetchEmployees();
-    </script>
+    <form action="http://localhost:3000/employees/3/photo" method="POST" enctype="multipart/form-data">
+      <input type="file" name="photo" accept=".png, image/png, .jpg, .jpeg, image/jpeg">
+      <input type="submit">
+    </form>
   </body>
 </html>

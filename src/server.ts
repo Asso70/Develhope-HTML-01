@@ -7,6 +7,9 @@ import addFormats from "ajv-formats";
 import {Validator, ValidationError} from "express-json-validator-middleware";
 import {employeeCreSchema, EmployeeCreData, employeeUpdSchema, EmployeeUpdData} from "./employee";
 import {ErrorRequestHandler} from "express";
+import multer from "multer";
+import mime from "mime";
+import {randomUUID} from "node:crypto";
 
 const prisma = new PrismaClient();
 
@@ -84,6 +87,44 @@ app.delete("/employees/:id(\\d+)", async (request, response, next) => {
     response.status(404);
     next(`Cannot DELETE /employees/${employeeId}`);
   }
+});
+
+const generatePhotoFilename = (mimeType: string) => {
+  const randomFilename = `${randomUUID()}-${Date.now()}`;
+  const fileExtension = mime.getExtension(mimeType);
+  const fileName = `${randomFilename}.${fileExtension}`;
+  return fileName;
+}
+
+const storage = multer.diskStorage({
+  destination: "uploads/",
+  filename: (request, file, callback) => {
+    return callback(null, generatePhotoFilename(file.mimetype));
+  }
+});
+
+const MAX_SIZE_IN_MEGABYTES: number = 6 * 1024 * 1024;
+const VALID_MIME_TYPES: string[] = ["image/png", "image/jpeg"];
+const fileFilter: multer.Options["fileFilter"] = (request, file, callback) => {
+  if(VALID_MIME_TYPES.includes(file.mimetype)) callback(null, true);
+  else callback(new Error("Error: The uploaded file must be a JPG or a PNG image"));
+};
+const multerOptions = {
+  fileFilter,
+  limits: {
+    fileSize: MAX_SIZE_IN_MEGABYTES
+  }
+};
+
+const upload = multer({storage, ...multerOptions});
+
+app.post("/employees/:id(\\d+)/photo", upload.single("photo"), async (request, response, next) => {
+  if(!request.file) {
+    response.status(400);
+    return next("No photo file uploaded");
+  }
+  const photoFilename = request.file.filename;
+  response.status(201).json({photoFilename});
 });
 
 const validationErrorMiddleware: ErrorRequestHandler = (error, request, response, next) => {
