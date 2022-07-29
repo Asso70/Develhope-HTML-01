@@ -18,7 +18,8 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
-    "figlet": "^1.5.2"
+    "figlet": "^1.5.2",
+    "number-to-words": "^1.2.4"
   },
   "name": "develhope_esercitazione",
   "description": "Develhope HTML Class\r - 👋 Hi, I’m @Asso70\r - 👀 I’m interested in learning\r - 🌱 I’m currently learning web programming\r - 💞️ I’m looking to collaborate on my company's projects\r - 📫 How to reach me: I'm on Slack with my name similar to this nick ;-)",
