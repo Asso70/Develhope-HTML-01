@@ -10,3 +10,14 @@ Develhope HTML Class
 Asso70/Asso70 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
 --->
+
+# My Company's Employee API
+
+## Install
+npm install
+
+## Configure
+Create a .env file to set port # (normally to 3000) and other parameters
+
+## Develop
+npm run dev
